@@ -1,0 +1,118 @@
+.profile-container {
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-container .profile-mother-container {
+    flex-direction: row;
+    display: inline-block;
+} 
+
+.profile-container .profile-picture-cointainer .profile-cover-image {
+    margin-top: -20px;
+    margin-left: 70px;
+    margin-right: 10px auto;
+    border-radius: 10px;
+    max-width: 100%;
+    width: 1250px;
+    height: 320px;
+}
+
+.profile-container .profile-picture-cointainer .profile-picture {
+    position: absolute;
+    left: 55%;
+    top: 55%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-container .profile-picture-cointainer .profile-name {
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 80px;
+
+}
+
+.profile-container hr {
+    height: 1px;
+    width: 90%;
+    background-color: #ccc;
+    border: none;
+}
+
+.profile-container .profile-info {
+    margin-left: 150px;
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 300;
+}
+
+.profile-container .tabs {
+    padding: 10px;
+    text-align: left;
+    width: 50%;
+    cursor: pointer;
+    box-sizing: content-box;
+    position: relative;
+    outline: none;
+    display: inline;
+}
+
+.profile-container .tab-active {
+    color: #3c4358;
+    display: inline;
+    background: white;
+    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid red;
+}
+
+.profile-container .content-tabs {
+    flex-grow: 1;
+}
+
+.profile-container .content {
+    background: white;
+    padding: 20px;
+    width: 85%;
+    height: 100%;
+    display: none;
+}
+
+.profile-container .active-content {
+    display: block;
+}
+
+@media screen and (max-width: 800px) {
+    .profile-container {
+        margin: 5px;
+    }
+
+    .profile-container .profile-picture-cointainer .profile-cover-image {
+        display: none;
+    }
+
+    .profile-container .profile-picture-cointainer .profile-picture {
+        display: none;
+    }
+
+    .profile-container .profile-picture-cointainer .profile-name {
+        display: none;
+    }
+
+    .profile-container hr {
+        display: none;
+    }
+
+    .profile-container .profile-mother-container .profile-arrow {
+        display: none;
+    }
+
+    .profile-container .profile-info {
+        margin-left: -80px;
+        font-size: 16px;
+    }
+}

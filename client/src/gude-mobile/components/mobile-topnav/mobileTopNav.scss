@@ -1,0 +1,64 @@
+.mobile-top-nav{
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  .row{
+    height: 60px;
+    padding: 0;
+    .col-xs-2{
+      padding: 5px 0 0;
+      text-align: center;
+      .side-menu{
+        font-size: 40px;
+        border-radius: 10px;
+        padding: 5px;
+        &:hover{
+          background-color: #DE3434;
+          color: white;
+        }
+      }
+    }
+    .notif-icon{
+      text-align: center;
+      i{
+        font-size: 35px;
+        padding: 5px;
+        border-radius: 10px;
+        &:hover{
+          background-color: #DE3434;
+          color: white;
+        }
+      }
+    }
+    .col-xs-8{
+      padding: 10px;
+      .wrap{
+        background-color: #FFFFFF;
+      }
+      .col-xs-10{
+        padding: 0;
+        input{
+          border-bottom-left-radius: 15px;
+          border-top-left-radius: 15px;
+        }
+      }
+      .col-xs-2{
+        //margin-top: 5px;
+        border-bottom-left-radius: 20px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        background-color: black;
+        padding: 5px 5px 6.5px;
+        position: relative;
+        right: 12px;
+        i{
+          font-size: 20px;
+          color: #FFFFFF;
+        }
+      }
+    }
+  }
+}

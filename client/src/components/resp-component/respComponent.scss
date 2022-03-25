@@ -1,0 +1,14 @@
+.resp-component{
+  position: fixed;
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  z-index: 1081;
+  border-radius: 10px;
+  p {
+    i {
+      float: right;
+      font-size: 15px;
+    }
+  }
+}

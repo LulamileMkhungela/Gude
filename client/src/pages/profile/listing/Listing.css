@@ -1,0 +1,109 @@
+.listing-container {
+    margin-top: 30px;
+    margin-left: -150px;
+    margin-right: auto;
+    max-width: 200%;
+    width: 1330px;
+    height: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+
+.listing-container .listing-holder-container {
+    display: inline-block;
+}
+
+.listing-container .listing-holder-container .listing-1st-child {
+    float: left;
+    margin: 0px;
+}
+
+.listing-container .listing-holder-container .listing-2nd-child {
+    float: right;
+    margin-left: 600px;
+}
+
+.listing-container .listing-holder-container .listing-1st-child .listing-image {
+    max-width: 650%;
+    width: 550%;
+    height: 250%;
+}
+
+.listing-container .listing-holder-container .listing-2nd-child .listing-h5 {
+    margin: 20px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.listing-container .listing-holder-container .listing-2nd-child .listing-status {
+    font-weight: 400;
+    font-size: 16px;
+    color: grey;
+    margin-left: 20px;
+}
+
+.listing-container .listing-holder-container .listing-2nd-child .listing-status span {
+    margin-left: 5px;
+}
+
+.listing-container .listing-holder-container .listing-2nd-child .listing-sku {
+    font-weight: 400;
+    font-size: 16px;
+    color: grey;
+    margin-left: 20px;
+}
+
+.listing-container .listing-holder-container .listing-2nd-child .listing-location {
+    font-weight: 400;
+    font-size: 16px;
+    color: grey;
+    margin-left: 20px
+}
+
+.listinig-profile {
+    flex-direction: row;
+    display: inline-block;
+}
+
+.listing-profile-image {
+    margin-left: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.listing-fornames {
+    margin-top: -35px;
+    margin-left: 80px;
+    font-weight: 400;
+}
+
+.listing-2nd-child hr { 
+    border: 1px dashed #000; 
+    width: 100%; 
+    margin-left: 20px;
+    margin-top: 15px; 
+}
+
+.listing-description {
+    margin-left: 20px;
+}
+
+.listing-information {
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 800px) {
+    .listing-container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 650px;
+        height: 200px auto;
+    }
+
+    .listing-container .listing-holder-container .listing-1st-child .listing-image {
+        max-width: 200%;
+        width: 200%;
+        height: 100%;
+    }
+}
