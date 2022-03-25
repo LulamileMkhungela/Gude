@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-import img from '../../images/login.jpg';
+import image from '../../images/logoNew/SocialGraphics (1).png';
 import icon from '../../images/icon.jpeg';
 
 import './register.scss';
@@ -74,7 +74,7 @@ const  Register = ({history}) => {
             }
 
             <div className={'img-logo'}>
-                <img src={img} alt={'Register Image'}/>
+                <img src={image} alt={'Register Image'}/>
             </div>
             <div className={'form'}>
                 <form id={'signup-form'}>
@@ -87,8 +87,6 @@ const  Register = ({history}) => {
                     <br />
                     <div className={'register-wel-msg'}><p>Join Gude Marketplace</p></div>
                     <div className={'route-to-log'}><p>Already Have An Account? <Link to={'/login'}>Login</Link></p></div>
-                    <br />
-                    <button className={'btn btn-default fb-btn'}>Login With Facebook</button>
                     <br />
                     <br />
                     <br />

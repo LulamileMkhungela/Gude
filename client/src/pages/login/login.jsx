@@ -1,6 +1,5 @@
 import React, {useState} from "react";
-
-import img from '../../images/login.jpg';
+import imging from '../../images/logoNew/SocialGraphics (1).png';
 import icon from '../../images/icon.jpeg';
 
 import './login.scss';
@@ -76,7 +75,7 @@ const Login = ({history}) => {
             }
 
             <div className={'img-logo'}>
-                <img src={img} alt={'Login Image'}/>
+                <img src={imging} alt={'Login Image'}/>
             </div>
             <div className={'form'}>
                 <form id={'login-form'}>
