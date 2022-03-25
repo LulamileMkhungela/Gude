@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { MdArrowBack } from "react-icons/md"
+import { FaPen } from "react-icons/fa"
 
 import './Profile.css'
 import studentCover from '../../images/student_cover.png'
 import profilePic from '../../images/pro_pic.png'
+import Modal from '../../components/profile-modal/Modal'
 
 // sections
 import Listing from './listing/Listing'
@@ -34,6 +36,10 @@ const Profile = () => {
                 <img className="profile-picture" src={profilePic} alt="" />
                 {/** fetch the name from the database */}
                 <p className="profile-name">Thabiso Hlatshayo</p>
+                <Modal />
+                <button className="profile-modal">
+                    <FaPen size={30} />
+                </button>
             </div>
             <hr />
             <div className="profile-info">
