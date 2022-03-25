@@ -16,6 +16,9 @@ import Sold from './sold/Sold'
 
 const Profile = () => {
     const [togglestate, SetTogglestate] = useState(1);
+    const [show, setShow] = useState(false);
+
+    const closeModalHandler = () => setShow(false);
 
     const toggleTab = (index) => {
         SetTogglestate(index)
@@ -36,10 +39,11 @@ const Profile = () => {
                 <img className="profile-picture" src={profilePic} alt="" />
                 {/** fetch the name from the database */}
                 <p className="profile-name">Thabiso Hlatshayo</p>
-                <Modal />
-                <button className="profile-modal">
+                {show ? <div onClick={closeModalHandler} className="profile-modal-drop"></div> : null}
+                <button onClick={() => setShow(true)} className="profile-modal">
                     <FaPen size={30} />
                 </button>
+                <Modal show={show} close={closeModalHandler} />
             </div>
             <hr />
             <div className="profile-info">

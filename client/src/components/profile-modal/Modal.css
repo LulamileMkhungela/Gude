@@ -9,6 +9,8 @@
     width: 80%;
     max-width: 800px;
     margin: 4rem auto;
+    transition: all 1.1s ease;
+    z-index: 10;
 }
 
 .profile-modal-header {
