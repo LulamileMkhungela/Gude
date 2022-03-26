@@ -18,7 +18,24 @@ const Modal = ({ show, close }) => {
         <div className="profile-modal-content">
             <div className="profile-modal-body">
                 <h4 className="profile-modal-h4">User profile</h4>
-                 <p>Your form here</p>
+                 <div className="profile-modal-form-folder">
+                     <form action="#">
+                        <div className="profile-input-boxes">
+                            <div className="input-box">
+                                <input type="text" placeholder="enter your first name" />
+                            </div>
+                            <div className="input-box">
+                                <input type="text" placeholder="enter your second name" />
+                            </div>
+                            <div className="input-box">
+                                <input type="text" placeholder="enter your first name" />
+                            </div>
+                            <div className="input-box">
+                                <input type="text" placeholder="enter your first name" />
+                            </div>
+                        </div>
+                     </form>
+                 </div>
             </div>
             <div className="profile-modal-footer">
                 <button onClick={close} className="profile-save-btn">Save</button>

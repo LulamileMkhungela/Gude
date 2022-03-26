@@ -40,12 +40,47 @@
     color: red;
 }
 
-.profile-modal-body p {
+.profile-modal-body .profile-modal-form-folder {
     font-size: 1rem;
     background: #eee;
     color: #333;
     padding: 1rem;
     margin: 1rem 0 2rem 0;
+}
+
+.profile-modal-form-folder form {
+    height: 100%;
+    width: 100%;
+}
+
+form .profile-input-boxes {
+    margin-top: 20px;
+}
+
+form .input-box {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    margin: 10px 0;
+    position: relative;
+}
+
+form .input-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 0 30px;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 2px solid rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease
+}
+
+form .input-box input:focus,
+form .input-box input:valid {
+    border-color: red;
 }
 
 .profile-modal-footer .profile-save-btn {
@@ -59,3 +94,4 @@
     outline: none;
     cursor: pointer;
 }
+
