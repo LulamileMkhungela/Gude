@@ -5,12 +5,13 @@
 const http = require('http')
 const app = require('./app')
 
-const port = process.env.PORT || 8080
-const cors = require('cors')
 const server = http.createServer(app)
 
+const port = process.env.PORT || 8080
 
-
-
-server.listen(port)
-
+try {
+    server.listen(port)
+    console.log(`server up and running on port: ${port}`)
+} catch (err) {
+    console.log(err)
+}
