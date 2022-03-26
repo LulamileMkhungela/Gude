@@ -14,4 +14,4 @@ try {
     console.log(`server is up and running on port: ${port}`)
 } catch (err) {
     console.log(err)
-s}
+}
