@@ -36,28 +36,40 @@
 }
 
 .profile-modal-body .profile-modal-h4 {
-    font-size: 1.8rem;
+    font-size: 2rem;
+    font-weight: border;
     color: red;
 }
 
 .profile-modal-body .profile-modal-form-folder {
-    font-size: 1rem;
-    background: #eee;
-    color: #333;
-    padding: 1rem;
-    margin: 1rem 0 2rem 0;
+    max-width: 850px;
+    width: 100%;
+    background: #fff;
+    padding: 5px 30px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-modal-wrapper .profile-form-content {
+    display: flex;
+    align-items: center;
+}
+
+.profile-form-content .profile-holder {
+    width: calc(400% / 2 - 25px);
+    
 }
 
 .profile-modal-form-folder form {
     height: 100%;
     width: 100%;
+    background: #fff;
 }
 
-form .profile-input-boxes {
-    margin-top: 20px;
+form .profile-form-content .profile-input-boxes {
+    margin-top: 30px;
 }
 
-form .input-box {
+form .profile-form-content .input-box {
     display: flex;
     align-items: center;
     height: 50px;
@@ -66,26 +78,35 @@ form .input-box {
     position: relative;
 }
 
-form .input-box input {
+.profile-form-content .input-box input {
     height: 100%;
-    width: 100%;
+    width: 300%;
     outline: none;
     border: none;
-    padding: 0 30px;
-    font-size: 17px;
+    padding: 0 50px;
+    font-size: 16px;
     font-weight: 500;
-    border-radius: 2px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease
 }
 
-form .input-box input:focus,
-form .input-box input:valid {
+.profile-form-content .input-box .profile-icons {
+    position: absolute;
+    color: black;
+}
+
+.profile-form-content .input-box input:focus {
     border-color: red;
 }
 
+.profile-modal-footer {
+    margin-top: 10px;
+}
 .profile-modal-footer .profile-save-btn {
     display: block;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    width: 100%;
+    height: 50px;
     margin-left: auto;
     padding: 0.5rem 1.8rem;
     background: red;
@@ -93,5 +114,6 @@ form .input-box input:valid {
     border: none;
     outline: none;
     cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
