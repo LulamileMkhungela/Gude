@@ -1,12 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
 import './Listing.css'
 import img from '../../../images/img.png'
 import profilePic from '../../../images/pro_pic.png'
 
 function Listing() {
+  const [see, setSee] = useState(true);
+
+  useEffect(() => {
+    axios.get('')
+  }, [])
+
+  
   return (
     <div className="listing-container">
+      <div className="listing-top-container">
+        <h5 className="listing-h5-text">listing</h5>
+        <button className="listing-see-link" onClick={() => setSee(!see)}>See more</button>
+      </div>
       <div className="listing-holder-container">
         <div className="listing-1st-child">
           <img src={img} alt="" className="listing-image" />

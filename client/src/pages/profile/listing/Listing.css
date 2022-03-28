@@ -1,12 +1,42 @@
 .listing-container {
     margin-top: 30px;
-    margin-left: -150px;
-    margin-right: auto;
-    max-width: 200%;
-    width: 1330px;
+    align-items: center;
+    max-width: 100%;
+    width: 1050px;
     height: 500px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 5px;
+}
+
+.listing-container .listing-top-container {
+    height: 60px;
+    width: 100%;
+    background-color: rgb(184, 184, 184);
+    border-radius: 5px 5px 0px 0px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.listing-container .listing-top-container .listing-h5-text {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.listing-container .listing-top-container .listing-see-link {
+    margin-top: 10px;
+    margin-right: 20px;
+    width: 100px;
+    height: 30px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.listing-container .listing-top-container .listing-see-link:hover {
+    background-color: white;
 }
 
 .listing-container .listing-holder-container {
@@ -20,12 +50,12 @@
 
 .listing-container .listing-holder-container .listing-2nd-child {
     float: right;
-    margin-left: 600px;
+    margin-left: 400px;
 }
 
 .listing-container .listing-holder-container .listing-1st-child .listing-image {
     max-width: 650%;
-    width: 550%;
+    width: 350%;
     height: 250%;
 }
 
@@ -91,19 +121,4 @@
 
 .listing-information {
     margin-left: 20px;
-}
-
-@media screen and (max-width: 800px) {
-    .listing-container {
-        margin-left: auto;
-        margin-right: auto;
-        width: 650px;
-        height: 200px auto;
-    }
-
-    .listing-container .listing-holder-container .listing-1st-child .listing-image {
-        max-width: 200%;
-        width: 200%;
-        height: 100%;
-    }
 }

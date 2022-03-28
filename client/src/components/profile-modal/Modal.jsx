@@ -56,7 +56,7 @@ const Modal = ({ show, close }) => {
                  </div>
             </div>
             <div className="profile-modal-footer">
-                <button onClick={close} className="profile-save-btn">Update information</button>
+                <button className="profile-save-btn">Update information</button>
             </div>
         </div>
     </div>

@@ -20,6 +20,11 @@ const Profile = () => {
 
     const closeModalHandler = () => setShow(false);
 
+    const showModalHandler = () => {
+        setShow(true);
+        SetTogglestate(1);
+    }
+
     const toggleTab = (index) => {
         SetTogglestate(index)
     }
@@ -40,7 +45,7 @@ const Profile = () => {
                 {/** fetch the name from the database */}
                 <p className="profile-name">Thabiso Hlatshayo</p>
                 {show ? <div onClick={closeModalHandler} className="profile-modal-drop"></div> : null}
-                <button onClick={() => setShow(true)} className="profile-modal">
+                <button onClick={showModalHandler} className="profile-modal">
                     <FaPen size={30} />
                 </button>
                 <Modal show={show} close={closeModalHandler} />

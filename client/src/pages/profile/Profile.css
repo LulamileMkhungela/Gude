@@ -43,6 +43,7 @@
 
 .profile-container hr {
     height: 1px;
+    margin-left: 100px;
     width: 90%;
     background-color: #ccc;
     border: none;
