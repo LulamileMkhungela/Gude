@@ -1,36 +1,48 @@
 import React from 'react'
+import { 
+  MdOutlineWork, 
+  MdHome, 
+  MdLocationOn 
+} from "react-icons/md";
+import { FaGraduationCap } from "react-icons/fa";
 
 import './About.css'
 
 function About() {
   return (
     <div className="about-container">
-       <h3 className="about-intro">Introduction</h3>
-            <form>
-              <div className="form-control">
-                <i class="fas fa-briefcase fa-lg"></i>
-                <input className="input-control" type="text" />
+      <form action="#">
+        <div className="about-form-content">
+          <div className="about-form">
+            <div className="about-title">Introduction</div>
+            <div className="about-input-boxes">
+              <div className="profile-input-box">
+                <MdOutlineWork size={30} className='about-icon'/>
+                <input type="text" placeholder='Enter your occupation' />
               </div>
-              <div className="form-control">
-                <i class="fa fa-map-marker fa-lg"></i>
-                <input className="input-control" type="text" />
+              <div className="profile-input-box">
+                <FaGraduationCap size={30} className='about-icon'/>
+                <input type="text" placeholder='Enter your high school name' />
               </div>
-              <div className="form-control">
-                <i class="fa fa-graduation-cap fa-lg" aria-hidden="true"></i>
-                <input className="input-control" type="text" />
+              <div className="profile-input-box">
+                <FaGraduationCap size={30} className='about-icon'/>
+                <input type="text" placeholder='Enter your tertiary name' />
               </div>
-              <div className="form-control">
-                <i class="fa fa-graduation-cap fa-lg" aria-hidden="true"></i>
-                <input className="input-control" type="text" />
+              <div className="profile-input-box">
+                <MdHome size={30} className='about-icon'/>
+                <input type="text" placeholder='Enter your house address' />
               </div>
-              <div className="form-control">
-                <i class="fa fa-home fa-lg"></i>
-                <input className="input-control" type="text" />
+              <div className="profile-input-box">
+                <MdLocationOn size={30} className='about-icon'/>
+                <input type="text" placeholder='Enter your location' />
               </div>
-              <div className="btn">
-                <button>Save & Continue</button>
+              <div className="profile-save-btn">
+                <button className="save-btn">Save</button>
               </div>
-            </form>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
   )
 }

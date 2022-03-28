@@ -1,68 +1,97 @@
 .about-container {
     margin-top: 30px;
-    margin-left: -150px;
-    margin-right: auto;
-    max-width: 200%;
-    width: 1330px;
-    height: 400px;
+    padding: 40px 30px;
+    max-width: 100%;
+    width: 850px;
+    height: 500px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 5px;
+    align-items: center;
+    justify-content: center;
 }
 
 .about-container form {
-    margin-top: 50px;
-    margin-left: 200px;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    z-index: 100;
 }
 
-.about-container h3 {
-    font-weight: bold;
-    text-align: center;
-    margin-top: 50px;    
-}
-
-
-.about-container .form-control {
-    margin-top: 10px;    
-    margin-left: 10px;
-    width: 1000px;
-}
-
-.about-container .form-control .input-control {
-    outline: none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: none;
-    border-width: 1px;
-    width: 70%;
-    margin-left: 50px;
-}
-
-.about-container button {
-    outline: none;
-    color: white;
-    background-color: red;
-    width: 200px;
-    height: 50px;
-    font-weight: bolder;
-    text-align: center;
-    border-radius: 3px;
-}
-
-.about-container .btn {
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+.about-container .about-form-content {
     display: flex;
-    text-align: center;
 }
 
-@media screen and (max-width: 800px) {
-    .about-container {
-        margin-left: auto;
-        margin-right: auto;
-        width: 650px;
-        height: 200px auto;
-        
-    }
+.about-form-content .about-form {
+    width: calc(400% / 2 -px 25);
+    z-index: 0;
+}
+
+form .about-form-content .about-title {
+    position: relative;
+    font-size: 24px;
+    font-weight: 80
+}
+
+form .about-form-content .about-title:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 25px;
+    background: red;
+}
+
+form .about-form-content .about-input-boxes {
+    margin-top: 30px;
+} 
+
+form .about-form-content .profile-input-box {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 300%;
+    margin: 10px 0;
+    position: relative;
+}
+
+form .about-form-content .profile-input-box input {
+    height: 100%;
+    width: 100%;
+    margin-left: 8px;
+    outline: none;
+    border: none;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+form .about-form-content .profile-input-box input:focus {
+    border-color: red;
+}
+
+form .about-form-content .profile-input-box .about-icon {
+    position: absolute;
+    color: black;
+}
+
+.profile-save-btn {
+    margin-top: 20px;
+}
+
+.profile-save-btn .save-btn {
+    display: block;
+    font-size: 1.5rem;
+    width: 300%;
+    height: 50px;
+    margin-left: auto;
+    padding: 0.5rem 1.8rem;
+    background: red;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
