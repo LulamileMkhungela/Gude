@@ -7,11 +7,16 @@ import img1 from '../../images/default_img.png';
 import RespComponent from "../resp-component/respComponent";
 import post from "../../post";
 import {withRouter} from "react-router-dom";
+import Cart_Modal from '../cart-modal/Cart_Modal';
 
 const Cart = ({cart, history}) => {
     let [quantity, setQuantity] = useState(1);
     const [showResp, setShowResp] = useState(false)
     const [respMsg,setRespMsg] = useState('');
+    const [showModal, setShowModal] = useState(false)
+
+    const closeModal = () => setShowModal(false);
+
     const subQuantity = () =>{
         setShowResp(false)
         if (quantity === 1) {
@@ -55,6 +60,7 @@ const Cart = ({cart, history}) => {
                 showResp ? <RespComponent err={true} msg={respMsg} /> : ''
             }
             <div className={'row p0'}>
+            <Cart_Modal showModal={showModal} closeModal={closeModal} />
 
                 <div className={'col-lg-5 p0'}>
                     <div className={'cart-img'}>
@@ -113,7 +119,7 @@ const Cart = ({cart, history}) => {
                             }}>+</span>
                         </div>
                         <div className={'col-lg-5 cart-checkout-btn'}>
-                            <button className={'btn btn-default'}>Proceed To Checkout</button>
+                            <button onClick={() => setShowModal(true)} className={'btn btn-default'}>Proceed To Checkout</button>
                         </div>
                         <div className={'col-lg-2 cart-delete'}>
                             <i onClick={()=>deleteCartItem()} className={'fa fa-trash'}> </i>

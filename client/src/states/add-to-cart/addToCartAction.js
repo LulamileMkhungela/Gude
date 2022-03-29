@@ -57,6 +57,7 @@ export const addToCartXhr = (productInfo,userId) => {
                     dispatch(addToCartFailure(resp.data))
                 }
                 if (!resp.data.err){
+                    console.log(resp)
                     dispatch(addToCartSuccess(resp.data))
                 }
             })
