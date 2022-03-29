@@ -7,6 +7,7 @@ import {Link, Redirect} from "react-router-dom";
 import axios from "axios";
 import RespComponent from "../../components/resp-component/respComponent";
 import {useSelector} from "react-redux";
+import FacebookLogin from 'react-facebook-login';
 
 
 const Login = ({history}) => {
@@ -16,6 +17,23 @@ const Login = ({history}) => {
     const [err, setErr] = useState(false)
     const [errMsg, setErrMsg] = useState('')
     const [success,setSuccess] = useState(false)
+    const responseFacebook =async (response) => {
+       
+        try {
+            const {accessToken, userID} = response
+            const res = await axios.post
+            ('http://localhost:8080/auth/facebooklogin', {accessToken, userID})
+            console.log(response.data.msg)
+            setSuccess(true)
+            localStorage.setItem('jwt', res.data.token)
+            history.go(0)
+            history.push('/home')
+           } 
+           catch (err) {
+           console.log(err)  
+           
+          }
+      }
 
     const isLoggedIn = useSelector(state => state.userLoggedInData.isLoggedIn)
 
@@ -94,7 +112,15 @@ const Login = ({history}) => {
                     </p></div>
 
                     <br/>
-                    <button className={'btn btn-default fb-btn'}>Login With Facebook</button>
+                    <FacebookLogin  className={'btn btn-default fb-btn'}
+                    buttonStyle={{width:'100%',height:'60px'}}
+                       appId="3198980513669068"
+                       autoLoad={true}
+                       fields="name,email,picture"
+                       callback={responseFacebook} 
+                       cssClassName={'btn btn-default fb-btn'}
+                       icon="fa-facebook"
+                    />
 
                     <br/>
                     <br/>

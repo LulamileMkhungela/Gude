@@ -3,6 +3,7 @@ const express = require('express')
 
 const router = express.Router()
 const auth = require('../../middleware/auth');
+const checkAuth = require('../../middleware/checkAuth');
 /*
     Import Middlewares
  */
@@ -11,6 +12,8 @@ const signUpUserController = require('../../controllers/authController/signUpUse
 const loginUserController = require('../../controllers/authController/loginUserController')
 const authUserController = require('../../controllers/authController/authUserController')
 const forgotpassword = require('../../controllers/authController/forgotpasswordController')
+const socialsLogin = require('../../controllers/authController/socialController');
+const profileController = require('../../controllers/authController/profileController');
 const {body} = require('express-validator')
 
 /*
@@ -41,6 +44,9 @@ router.post('/signup/student',registerStudentValidation,signUpUserController.reg
 router.post('/student/activate',signUpUserController.activateEmail);
 router.post('/forgot',forgotpassword.forgotPassword);
 router.post('/reset',auth,forgotpassword.resetPassword);
+router.post('/facebooklogin',socialsLogin.facebookLogin);
+router.get('/infor',checkAuth,profileController.getUserInfor);
+router.patch('/update',checkAuth,profileController.updateUser);
 
 module.exports = router
 
