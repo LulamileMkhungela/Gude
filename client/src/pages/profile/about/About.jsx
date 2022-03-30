@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { 
   MdOutlineWork, 
   MdHome, 
@@ -7,6 +7,25 @@ import {
 import { FaGraduationCap } from "react-icons/fa";
 
 import './About.css'
+import {useSelector} from "react-redux";
+import axios from "axios";
+
+const accType = useSelector(state => state.useLoggedInData.userInfo.acc_type)
+
+useEffect(() => {
+  const fetchUserInfo = async  () => {
+    await axios({
+      url : '',
+      method : 'GET',
+      data : {
+        acc_type : accType
+      }
+    }).then(resp => {
+
+    })
+  }
+  fetchUserInfo()
+},[accType])
 
 function About() {
   return (

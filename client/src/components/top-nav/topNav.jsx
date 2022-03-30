@@ -14,7 +14,6 @@ const TopNav = ({history}) => {
     const cartCount = useSelector(state => state.addToCart.count)
     const sellOnGude = async (e) => {
         e.preventDefault()
-        console.log(_user_id)
         await post('http://localhost:8080/auth/check-student',{
             _user_id : _user_id
         }).then(resp => {
@@ -83,7 +82,7 @@ const TopNav = ({history}) => {
                                         }
 
                                     </li>
-                                    <li><div className={'pro-img'}><img src={defImag} alt={''}/></div></li>
+                                    <li><div className={'pro-img'} onClick={() => history.push('/profile')}><img src={defImag} alt={''}/></div></li>
                                 </ul>
                             </div>
 

@@ -13,10 +13,13 @@ import Listing from './listing/Listing'
 import About from './about/About'
 import Draft from './draft/Draft'
 import Sold from './sold/Sold'
+import {useSelector} from "react-redux";
 
 const Profile = () => {
     const [togglestate, SetTogglestate] = useState(1);
     const [show, setShow] = useState(false);
+
+    const accType = useSelector(state => state.userLoggedInData.userInfo.acc_type);
 
     const closeModalHandler = () => setShow(false);
 
@@ -53,11 +56,15 @@ const Profile = () => {
             <hr />
             <div className="profile-info">
                 <div>
-                    <div
-                        className={togglestate === 1 ? "tab-active" : "tabs"}
-                        onClick={() => toggleTab(1)}>
-                        Your listings
-                    </div>
+                    {
+                        accType === 'student' ? (
+                            <div
+                                className={togglestate === 1 ? "tab-active" : "tabs"}
+                                onClick={() => toggleTab(1)}>
+                                Your listings
+                            </div>
+                        ) : ''
+                    }
                     <div
                         className={togglestate === 2 ? "tab-active" : "tabs"}
                         onClick={() => toggleTab(2)}>
@@ -73,6 +80,7 @@ const Profile = () => {
                     </div>
                 </div>
                 <div>
+
                     <div className={togglestate === 1 ? "content  active-content" : "content"}>
                         <Listing />
                     </div>

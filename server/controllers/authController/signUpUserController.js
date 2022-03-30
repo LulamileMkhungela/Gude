@@ -123,16 +123,13 @@ module.exports = {
             })
         } else {
             const {_user_id, contact, alt_contact, student_email, location} = req.body
-            
+            console.log(_user_id)
             if (student_email.includes('@')) {
                 const splitMail = student_email.split('@')[0];
                 if (!isNaN(splitMail)) {
                     //Write email confirmation here
                     try {
-                      
-
                         const user = await Student.findOne({student_email})
-                        
                         if (user) {
                             return res.status(200).json({
                                 err: true,
@@ -140,7 +137,6 @@ module.exports = {
                                 mailExist : true
                             })
                         }
-
                         const newUser = {
                             _user_id, contact, alt_contact, student_email, location
                         }
@@ -177,6 +173,7 @@ module.exports = {
     activateEmail: async (req, res) => {
         try {
             const {activation_token} = req.body
+
             const user = jwt.verify(activation_token, process.env.ACTIVATION_TOKEN_SECRET)
             const { _user_id, contact, alt_contact, student_email, location} = user
             const check = await Student.findOne({student_email})
@@ -186,29 +183,35 @@ module.exports = {
                     msg: "This email already exists."
                 })
             }
-            //find user from table user and update account type to student
+            // //find user from table user and update account type to student
+            if (user){
+                const userAcc_type = await User.findByIdAndUpdate(_user_id,{acc_type:'student'},async (e,doc)=>{
+                    if(e)
+                    {
+                        return res.status(200).json({
+                            err: true,
+                            msg: e,
+                            isStudent: false
+                        })
+                    }
+                    else{
+                        const newUser = new Student({
+                            _student_id:_user_id, contact, alt_contact, student_email, location,tertiary_name:null
+                        })
+                        await newUser.save()
+                        res.status(201).json({
+                            err: false,
+                            msg: "Account has been activated! u can now sell on Gude"
+                        })
 
-            const userAcc_type = await User.findByIdAndUpdate(_user_id,{acc_type:'student'},(e,doc)=>{
-                if(e)
-                {
-                    return res.status(200).json({
-                        err: true,
-                        msg: e,
-                        isStudent: false
-                    })
-                }
-                else{
-                    const newUser = new Student({
-                        _student_id:_user_id, contact, alt_contact, student_email, location,tertiary_name:null
-                    })
-                     newUser.save()
-                    res.status(201).json({
-                        err: false,
-                        msg: "Account has been activated! u can now sell on Gude"
-                    })
-
-                }
-            })
+                    }
+                }).clone()
+            }else{
+                return res.status(200).json({
+                    err : true,
+                    msg : 'User Student Email Couldn\'t Be Verified'
+                })
+            }
 
             
         } catch (error) {

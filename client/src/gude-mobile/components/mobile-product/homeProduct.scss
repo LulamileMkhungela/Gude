@@ -1,0 +1,23 @@
+.home-product{
+  height: 270px;
+  width: 100%;
+  position: relative;
+  img{
+    width: 100%;
+    height: 150px;
+  }
+  .row{
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    .col-xs-6{
+      padding: 0;
+      button{
+        font-size: 10px;
+        width: 100%
+
+      }
+    }
+  }
+}

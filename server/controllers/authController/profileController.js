@@ -3,9 +3,15 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const profileController = {
     getUserInfor: async (req, res) => {
+        const {acc_type} = req.body;
+        if (acc_type === 'student'){
+            //Fetch From Table Students
+
+        }else{
+            //Fetch From Table Users
+        }
         try {
-            
-            
+
          const user = await User.findById(req.user.id).select('-password')
       
             res.json(user)

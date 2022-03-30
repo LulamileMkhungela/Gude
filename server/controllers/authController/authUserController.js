@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken')
 const authUserController = (req,res) => {
 
     const cookie = req.body.jwt
-    console.log(req.body)
 
     try{
         jwt.verify(cookie,process.env.PERSONAL_ACCESS_TOKEN, (e,authData) => {

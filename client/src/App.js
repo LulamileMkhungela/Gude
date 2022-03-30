@@ -23,6 +23,9 @@ import {fetchProducts} from "./states/fetch-products/fetchProductsAction";
 import {getItemCount} from "./states/add-to-cart/addToCartAction";
 import Home from "./gude-mobile/pages/home/home";
 import Profile from './pages/profile/Profile';
+import MobileExplore from "./gude-mobile/pages/mobile-explore/mobileExplore";
+import MobileProductPromo from "./gude-mobile/components/mobile-product/mobileProductPromo";
+import MobileDetailProduct from "./gude-mobile/pages/mobile-detail-product/MobileDetailProduct";
 
 const App = () => {
     const dispatch = useDispatch()
@@ -35,7 +38,7 @@ const App = () => {
             dispatch(fetchProducts())
         }
     },[isLoggedIn])
-    const screenWidth = useState(window.screen.width)
+
     return (
         <BrowserRouter>
             <Switch>
@@ -54,13 +57,13 @@ const App = () => {
               */}
                 <Route path={'/home'} exact>
                     {
-                       screenWidth[0]  <= 768 ? <Home /> : <Root> <Explore/> </Root>
+                        window.screen.width  <= 768 ? <Home> <MobileExplore /> </Home> : <Root> <Explore/> </Root>
                     }
                 </Route>
                 <Route path={'/home/:product_id'}>
-                    <Root>
-                        <DetailProduct/>
-                    </Root>
+                    {
+                        window.screen.width <= 768 ? <Home><MobileDetailProduct /></Home> : <Root><DetailProduct/></Root>
+                    }
                 </Route>
                 <Route path={'/add'}>
                     <Root>
