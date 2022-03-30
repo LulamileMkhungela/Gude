@@ -43,7 +43,6 @@ const addToCartRoute = require('./routes/add-to-cart/addToCartRoute')
 
 
 
-
 app.use('/auth', authRoute)
 app.use('/products', sellProductRoute)
 app.use('/add', addToCartRoute)

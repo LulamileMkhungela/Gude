@@ -44,7 +44,8 @@ const loginUserController = async (req,res) => {
                                     id : adv._id,
                                     firstname: adv.firstname,
                                     lastname: adv.lastname,
-                                    email : adv.email
+                                    email : adv.email,
+                                    acc_type:adv.acc_type
 
                                 }, process.env.PERSONAL_ACCESS_TOKEN)
 
