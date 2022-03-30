@@ -17,7 +17,7 @@ const profileController = {
         try {
             const {firstname,lastname,} = req.body
             await User.findOneAndUpdate({_id: req.user.id}, {
-                firstname,lastname,
+                firstname,lastname
             })
 
             res.json({msg: "Update Success!"})

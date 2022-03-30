@@ -58,7 +58,8 @@ module.exports = {
                                     firstname,
                                     lastname,
                                     email,
-                                    password: hash
+                                    password: hash,
+                                    acc_type: 'user'
                                 })
 
                                 user.save((e, result) => {
@@ -185,14 +186,31 @@ module.exports = {
                     msg: "This email already exists."
                 })
             }
-            const newUser = new Student({
-                _student_id:_user_id, contact, alt_contact, student_email, location
+            //find user from table user and update account type to student
+
+            const userAcc_type = await User.findByIdAndUpdate(_user_id,{acc_type:'student'},(e,doc)=>{
+                if(e)
+                {
+                    return res.status(200).json({
+                        err: true,
+                        msg: e,
+                        isStudent: false
+                    })
+                }
+                else{
+                    const newUser = new Student({
+                        _student_id:_user_id, contact, alt_contact, student_email, location,tertiary_name:null
+                    })
+                     newUser.save()
+                    res.status(201).json({
+                        err: false,
+                        msg: "Account has been activated! u can now sell on Gude"
+                    })
+
+                }
             })
-            await newUser.save()
-            res.status(201).json({
-                err: false,
-                msg: "Account has been activated! u can now sell on Gude"
-            })
+
+            
         } catch (error) {
 
 

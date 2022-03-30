@@ -20,6 +20,10 @@ const studentSchema = new mongoose.Schema({
     location : {
         type : String,
         required : true
+    },
+    tertiary_name : {
+        type : String,
+        default:null
     }
 },{
     timestamps : true
