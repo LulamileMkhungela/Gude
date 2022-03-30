@@ -1,0 +1,29 @@
+.delivery-container {
+    margin: 0;
+}
+
+.delivery-body-holder {
+    margin: 0;
+}
+
+.delivery-body-holder .delivery-head {
+    font-size: 20px;
+    font-weight: 800;
+    color: grey;
+}
+
+.delivery-body-holder .delivery-2nd-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.delivery-2nd-container .container-text-holder {
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    color: grey;
+}
+
+.delivery-2nd-container .delivery-radio {
+    margin-right: 50px;
+}

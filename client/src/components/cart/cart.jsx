@@ -55,12 +55,17 @@ const Cart = ({cart, history}) => {
         }
     }
     return (
+        <>
+            {
+                showModal ? <div onClick={closeModal} className="cart-back-drop"></div> : null
+            }
+            <Cart_Modal showModal={showModal} closeX={closeModal} />
         <div className={'single-cart'}>
             {
                 showResp ? <RespComponent err={true} msg={respMsg} /> : ''
             }
             <div className={'row p0'}>
-            <Cart_Modal showModal={showModal} closeModal={closeModal} />
+               
 
                 <div className={'col-lg-5 p0'}>
                     <div className={'cart-img'}>
@@ -130,6 +135,7 @@ const Cart = ({cart, history}) => {
 
             </div>
         </div>
+        </>
     )
 }
 

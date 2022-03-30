@@ -1,0 +1,8 @@
+.payment-container {
+    margin: 0px;
+}
+
+.payment-btn {
+    display: flex;
+    margin: 10px 10px;
+}

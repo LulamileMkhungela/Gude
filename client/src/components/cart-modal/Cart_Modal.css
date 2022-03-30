@@ -9,6 +9,8 @@
     width: 80%;
     max-width: 800px;
     margin: 4rem auto;
+    position: relative;
+    z-index: 3;
 }
 
 .cart-modal-header {
@@ -33,12 +35,22 @@
     margin-bottom: 1rem;
 }
 
-.cart-modal-body h4 {
-    font-size: 1.8rem;
+.cart-modal-body .cart-modal-radio-btn {
+    font-size: 1.2rem;
     color: coral;
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
 }
 
-.cart-modal-body p {
+.cart-delivery .cart-label {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.cart-modal-body .cart-modal-body-content {
     font-size: 1rem;
     background: #eee;
     Color: #333;
@@ -57,4 +69,15 @@
     border: none;
     outline: none;
     cursor: pointer;
+}
+
+.cart-back-drop {
+    background: rgba(63, 61, 61, 0.692);
+    margin-top: -105px;
+    margin-left: -230px;
+    height: 100%;
+    position: fixed;
+    transition: all 1.3s;
+    width: 100%;
+    z-index: 1;
 }

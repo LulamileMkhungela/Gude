@@ -1,5 +1,7 @@
 .single-cart {
+  margin-top: -500px;
   border-bottom: 0.05em solid rgba(211,211,211,.75);
+  position: fixed;
   .cart-img {
     width: 100%;
     height: 320px;
@@ -8,6 +10,7 @@
     img {
       width: 80%;
       height: 100%;
+      z-index: -3;
     }
   }
   .col-lg-7 {

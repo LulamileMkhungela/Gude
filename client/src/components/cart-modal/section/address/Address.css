@@ -1,0 +1,73 @@
+.address-container {
+    margin: 0px;
+}
+
+.address-text-icon {
+    display: flex;
+}
+
+.address-elememt-container {
+    margin-top: 10px;
+}
+
+.address-text-icon .address-btn {
+    border-radius: 50%;
+    border-color: red;
+    background: white;
+}
+
+.address-text-icon .address-icon {
+    font-size: 20px;
+    color: red;
+}
+
+.address-text-icon .address-text {
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.address-elememt-container .address-input {
+    width: 100%;
+    background: #eee;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+}
+
+.address-elememt-container .address-label {
+    font-size: 14px;
+    font-weight: 400;
+    color: grey;
+}
+
+.address-elememt-container .address-label span {
+    color: rgb(63, 63, 63);
+    font-size: 10px;
+}
+
+.address-div {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.address-div .address-combine {
+
+}
+
+.address-combine .address-s {
+    font-size: 14px;
+    font-weight: 400;
+    color: grey;
+}
+
+.address-combine .address-state-country {
+    width: 100%;
+    background: #eee;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+}
