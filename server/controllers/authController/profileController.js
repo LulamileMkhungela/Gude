@@ -1,23 +1,39 @@
 const User = require('../../models/User')
+const Student= require('../../models/Student');
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const profileController = {
     getUserInfor: async (req, res) => {
+
         const {acc_type} = req.body;
+    
         if (acc_type === 'student'){
-            //Fetch From Table Students
+            try {
+
+               //Fetch From Table Students
+            const student = await  Student.find({_student_id: req.user.id}).select('-password')
+            const user = await User.findById(req.user.id, 'firstname lastname')
+            // console.log(user)
+            const userInfo = {student_info : student,user_info : user}
+            res.json(userInfo)
+            } catch (err) {
+                return res.status(500).json({msg: err.message})
+            }
+            
 
         }else{
             //Fetch From Table Users
-        }
-        try {
+            try {
 
-         const user = await User.findById(req.user.id).select('-password')
+                const user = await User.findById(req.user.id).select('-password')
       
-            res.json(user)
-        } catch (err) {
-            return res.status(500).json({msg: err.message})
+                res.json(user)
+            } catch (err) {
+                return res.status(500).json({msg: err.message})
+            }
+            
         }
+       
     },
     updateUser: async (req, res) => {
         try {

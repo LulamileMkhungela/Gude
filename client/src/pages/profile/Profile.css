@@ -84,7 +84,7 @@
     padding: 20px;
     width: 85%;
     height: 100%;
-    display: none;
+    /* display: none; */
 }
 
 .profile-container .active-content {

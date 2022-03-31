@@ -65,10 +65,10 @@ const Login = ({history}) => {
                 if (!resp.data.err) {
                     localStorage.setItem('jwt', resp.data.token)
                     setSuccess(true)
-                    setTimeout(() => {
-                        history.go(0)
-                        history.push('/home')
-                    }, 1000)
+                    // setTimeout(() => {
+                    //     history.go(0)
+                    //     history.push('/home')
+                    // }, 1000)
                 }else{
                     setShowResp(true)
                     setErr(resp.data.err)
@@ -88,9 +88,9 @@ const Login = ({history}) => {
             {
                 showResp ? <RespComponent err={!err} msg={errMsg}/> : ''
             }
-            {
+            {/* {
                 isLoggedIn ? <Redirect to={'/home'} /> : ''
-            }
+            } */}
 
             <div className={'img-logo'}>
                 <img src={imging} alt={'Login Image'}/>

@@ -92,7 +92,7 @@ module.exports = {
         })
     },
     fetchCartItems : (req,res) => {
-    
+        console.log(req.body._user_id)
         Cart.find({_user_id : req.body._user_id}, (e,cartData) => {
             if (e){
                 res.status(200).json({

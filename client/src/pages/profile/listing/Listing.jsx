@@ -19,7 +19,7 @@ function Listing() {
         <>
             {
                 listing.length > 0 ? listing.map((item, i) => {
-                    return <div className="listing-container">
+                    return <div className="listing-container" key={i}>
                         <div className="listing-top-container">
                             <h5 className="listing-h5-text">Electronics</h5>
                             <button className="listing-see-link" onClick={() => setSee(!see)}>See more</button>

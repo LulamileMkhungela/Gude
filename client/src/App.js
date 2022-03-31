@@ -30,6 +30,7 @@ import MobileDetailProduct from "./gude-mobile/pages/mobile-detail-product/Mobil
 const App = () => {
     const dispatch = useDispatch()
     const userInfo = useSelector(state => state.userLoggedInData.userInfo)
+    console.log(userInfo)
     const isLoggedIn = useSelector(state => state.userLoggedInData.isLoggedIn)
     useEffect(() => {
         dispatch(fetchUserInfo(localStorage.getItem('jwt')))
