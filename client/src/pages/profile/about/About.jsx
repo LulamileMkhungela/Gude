@@ -10,24 +10,31 @@ import './About.css'
 import {useSelector} from "react-redux";
 import axios from "axios";
 
-const accType = useSelector(state => state.useLoggedInData.userInfo.acc_type)
 
-useEffect(() => {
-  const fetchUserInfo = async  () => {
-    await axios({
-      url : '',
-      method : 'GET',
-      data : {
-        acc_type : accType
-      }
-    }).then(resp => {
 
-    })
-  }
-  fetchUserInfo()
-},[accType])
+
 
 function About() {
+const accType = useSelector(state => state.userLoggedInData.userInfo.acc_type);
+
+useEffect(() => {
+
+  if(accType) {
+    ( async () => {
+      console.log(accType)
+      await axios({
+        
+        url : 'http://localhost:8080/auth/infor',
+        method : 'GET',
+    
+      }).then(resp => {
+        console.log(resp)
+      })
+    })()
+  }
+  
+},[accType])
+
   return (
     <div className="about-container">
       <form action="#">

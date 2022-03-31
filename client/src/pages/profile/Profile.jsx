@@ -19,6 +19,11 @@ const Profile = () => {
     const [togglestate, SetTogglestate] = useState(1);
     const [show, setShow] = useState(false);
 
+    const [listing,setListing] = useState(true)
+    const [about,setAbout] = useState(false)
+    const [draft,setDraft] = useState(false)
+    const [soldItems,setSoldItems] = useState(false)
+
     const accType = useSelector(state => state.userLoggedInData.userInfo.acc_type);
 
     const closeModalHandler = () => setShow(false);
@@ -56,43 +61,76 @@ const Profile = () => {
             <hr />
             <div className="profile-info">
                 <div>
-                    {
-                        accType === 'student' ? (
-                            <div
-                                className={togglestate === 1 ? "tab-active" : "tabs"}
-                                onClick={() => toggleTab(1)}>
-                                Your listings
-                            </div>
-                        ) : ''
-                    }
+                
                     <div
+                        className={togglestate === 1 ? "tab-active" : "tabs"}
+                        onClick={() => {
+                            setAbout(false)
+                            setListing(true)
+                            setDraft(false)
+                            setSoldItems(false)
+                            toggleTab(1)
+                        }}>
+                        Your listings
+                    </div>
+                <div
                         className={togglestate === 2 ? "tab-active" : "tabs"}
-                        onClick={() => toggleTab(2)}>
+                        onClick={() => {
+                            setAbout(false)
+                            setListing(false)
+                            setDraft(true)
+                            setSoldItems(false)
+                            toggleTab(2)
+                        }}>
                         Drafts
                     </div>
                     <div className={togglestate === 3 ? "tab-active" : "tabs"}
-                        onClick={() => toggleTab(3)}>
+                        onClick={() => {
+                            setAbout(true)
+                            setListing(false)
+                            setDraft(false)
+                            setSoldItems(false)
+                            toggleTab(3)
+                        }}>
                         About
                     </div>
                     <div className={togglestate === 4 ? "tab-active" : "tabs"}
-                        onClick={() => toggleTab(4)}>
+                        onClick={() => {
+                            setAbout(false)
+                            setListing(false)
+                            setDraft(false)
+                            setSoldItems(true)
+                            toggleTab(4)
+                        }}>
                         Sold items
                     </div>
                 </div>
                 <div>
 
-                    <div className={togglestate === 1 ? "content  active-content" : "content"}>
-                        <Listing />
-                    </div>
-                    <div className={togglestate === 2 ? "content  active-content" : "content"}>
+                    {
+                        listing ? <Listing /> : ''
+                    }
+                    {/* <div className={togglestate === 2 ? "content  active-content" : "content"}>
                         <Draft />
-                    </div>
-                    <div className={togglestate === 3 ? "content  active-content" : "content"}>
+                    </div> */}
+                    {
+                        draft   ?   <div className={togglestate === 3 ? "content  active-content" : "content"}>
+                                        <Draft />
+                                    </div>
+                                : ''
+                    }
+                    {/* <div className={togglestate === 3 ? "content  active-content" : "content"}>
                         <About />
-                    </div>
-                    <div className={togglestate === 4 ? "content  active-content" : "content"}>
+                    </div> */}
+                    {
+                        about ? <About /> : ''
+                    }
+                    {/* <div className={togglestate === 4 ? "content  active-content" : "content"}>
                         <Sold />
-                    </div>
+                    </div> */}
+                    {
+                        soldItems ? <Sold /> : ''
+                    }
                 </div>
             </div>
         </div>
