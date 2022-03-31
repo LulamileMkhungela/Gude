@@ -28,19 +28,28 @@ function Cart_Modal({  showModal, closeX}) {
       <div className="cart-modal-content">
         <div className="cart-modal-body">
           <div className="cart-modal-radio-btn">
-            <div className="cart-delivery">
-              <input type="radio" value="delivery" checked={page === "delivery"} onChange={OnChangeValueHandler} />
-              <br /><br />
+            <div className="cart-radio-btn">
+              <label className="radio">
+                <input className="cart-input" type="radio" value="delivery" checked={page === "delivery"} onChange={OnChangeValueHandler} />
+                <div className="cart-circle"></div>
+              </label>
+              <br />
               <p className="cart-label">Delivery</p>
             </div>
-            <div className="cart-address">
-              <input type="radio" value="address" checked={page === "address"} onChange={OnChangeValueHandler} />
-              <br /><br />
+            <div className="cart-radio-btn">
+              <label className="radio">
+                <input className="cart-input" type="radio" value="address" checked={page === "address"} onChange={OnChangeValueHandler} />
+                <div className="cart-circle"></div>
+              </label>
+              <br />
               <p className="cart-label">Address</p>
             </div>
-            <div className="cart-payment">
-              <input type="radio" value="payment" checked={page === "payment"} onChange={OnChangeValueHandler} />
-              <br /><br />
+            <div className="cart-radio-btn">
+              <label className="radio">
+                <input className="cart-input" type="radio" value="payment" checked={page === "payment"} onChange={OnChangeValueHandler} />
+                <div className="cart-circle"></div>
+              </label>
+              <br />
               <p className="cart-label">Payment</p>
             </div>
           </div>
@@ -49,9 +58,6 @@ function Cart_Modal({  showModal, closeX}) {
             {page === "address" && Address()}
             {page === "payment" && Payment()}
           </div>
-        </div>
-        <div className="cart-modal-footer">
-          <button className="cart-continue-btn">Continue</button>
         </div>
       </div>
     </div>

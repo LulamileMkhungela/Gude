@@ -15,21 +15,30 @@ function Delivery() {
         <h5 className="delivery-head">Standard Delivery</h5>
         <div className="delivery-2nd-container">
             <p className="container-text-holder">Order will be delivered between 3 - 5 business days</p>
-            <input className="delivery-radio" type="radio" value="one"  />
+            <label className="radio">
+              <input className="delivery-radio" type="radio" value="one"  />
+              <div className="delivery-circle"></div>
+            </label>
         </div>
       </div>
       <div className="delivery-body-holder">
         <h5 className="delivery-head">Next Day Delivery</h5>
         <div className="delivery-2nd-container">
             <p className="container-text-holder">Place your order before 6pm and your items will be delivered the next day</p>
-            <input className="delivery-radio" type="radio" value="two" />
+            <label className="radio">
+              <input className="delivery-radio" type="radio" value="two" />
+              <div className="delivery-circle"></div>
+            </label>
         </div>
       </div>
       <div className="delivery-body-holder">
         <h5 className="delivery-head">Nominated Delivery</h5>
         <div className="delivery-2nd-container">
             <p className="container-text-holder">Pick a particular day from the calendar and order will be delivered on selected date</p>
-            <input className="delivery-radio" type="radio" value="three" />
+            <label className="radio">
+              <input className="delivery-radio" type="radio" value="three" />
+              <div className="delivery-circle"></div>
+            </label>
         </div>
       </div>
     </div>

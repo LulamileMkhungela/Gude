@@ -105,7 +105,7 @@ const AddProduct = ({history}) => {
                                    onChange={e => {
 
                                        console.log(e.target.files)
-                                       setPreview(URL.createObjectURL(e.target.files[1]))
+                                       setPreview(URL.createObjectURL(e.target.files[0]))
                                        setShowPreview(true);
                                        setHoldImg(true);
                                        console.log(e.target.files)

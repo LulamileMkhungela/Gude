@@ -25,5 +25,42 @@
 }
 
 .delivery-2nd-container .delivery-radio {
-    margin-right: 50px;
+    display: none;
+}
+
+.delivery-2nd-container .radio {
+    font-size: 30px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-items: center;
+    color: black;
+}
+
+.radio .delivery-circle {
+    position: relative;
+    height: 25px;
+    width: 25px;
+    border: 5px solid red;
+    border-radius: 50%;
+    align-items: center;
+    justify-items: center;
+}
+
+.radio .delivery-circle::after {
+    content: '';
+    height: 10px;
+    width: 10px;
+    display: block;
+    position: absolute;
+    background: red;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.radio input:checked~.delivery-circle:after {
+    opacity: 1;
 }

@@ -4,5 +4,22 @@
 
 .payment-btn {
     display: flex;
-    margin: 10px 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-btn .payment-link-btn {
+    margin-left: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+}
+
+.payment-btn .paymentt-icon {
+    font-size: 34px;
+}
+
+.payment-btn .payment-name {
+    font-size: 18px;
+    font-weight: 600;
 }

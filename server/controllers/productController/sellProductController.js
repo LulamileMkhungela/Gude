@@ -11,8 +11,7 @@ const sellProductController = (req,res) => {
     const payLoad = req.body
     const fileLoad = req.files
 
-    console.log(fileLoad)
-    return 0;
+
     /*
         Check If All Fields Are Not Empty
      */
@@ -89,7 +88,7 @@ const sellProductController = (req,res) => {
                             quantity : payLoad.quantity,
                             location : payLoad.location,
                             payment_method : 'paypal',
-                            _user_id : payLoad._user_id,
+                            _user_id : '624468966d0b97663c80dd80',
                         })
 
                         product.save((err,result) => {

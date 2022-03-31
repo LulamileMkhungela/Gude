@@ -7,12 +7,12 @@ import {
 import { FaGraduationCap } from "react-icons/fa";
 
 import './About.css'
-import {useSelector} from "react-redux";
-import axios from "axios";
+//import {useSelector} from "react-redux";
+//import axios from "axios";
 
-const accType = useSelector(state => state.useLoggedInData.userInfo.acc_type)
+//const accType = useSelector(state => state.useLoggedInData.userInfo.acc_type)
 
-useEffect(() => {
+/*useEffect(() => {
   const fetchUserInfo = async  () => {
     await axios({
       url : '',
@@ -25,7 +25,7 @@ useEffect(() => {
     })
   }
   fetchUserInfo()
-},[accType])
+},[accType])*/
 
 function About() {
   return (
