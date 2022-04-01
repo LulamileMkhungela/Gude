@@ -8,6 +8,7 @@ import axios from "axios";
 import RespComponent from "../../components/resp-component/respComponent";
 import {useSelector} from "react-redux";
 import FacebookLogin from 'react-facebook-login';
+import GoogleLogin from 'react-google-login';
 
 
 const Login = ({history}) => {
@@ -17,6 +18,20 @@ const Login = ({history}) => {
     const [err, setErr] = useState(false)
     const [errMsg, setErrMsg] = useState('')
     const [success,setSuccess] = useState(false)
+
+    const responseGoogle = async (response) => {
+        try {
+            const res = await axios.post('http://localhost:8080/auth/googlelogin', {tokenId: response.tokenId})
+
+              history.push('/')
+        } catch (err) {
+         
+            
+        }
+    }
+    const resGoogleError =async (response) => {
+            console.log(response)
+    }
     const responseFacebook =async (response) => {
        
         try {
@@ -113,15 +128,23 @@ const Login = ({history}) => {
 
                     <br/>
                     <FacebookLogin  className={'btn btn-default fb-btn'}
-                    buttonStyle={{width:'100%',height:'60px'}}
+                       buttonStyle={{height:'60px',padding:'10px',width:'50%'}}
                        appId="3198980513669068"
                        autoLoad={true}
                        fields="name,email,picture"
                        callback={responseFacebook} 
-                       cssClassName={'btn btn-default fb-btn'}
+                       
                        icon="fa-facebook"
                     />
-
+                     <GoogleLogin className={'google'}
+                        
+                        clientId="1065984606644-bp5svth1umfjg051loi9odk3th5n8sd9.apps.googleusercontent.com"
+                        buttonText=" Login With Google "
+                      
+                        onSuccess={responseGoogle}
+                        onFailure={resGoogleError}
+                       
+                    />
                     <br/>
                     <br/>
                     <br/>

@@ -45,6 +45,7 @@ router.post('/student/activate',signUpUserController.activateEmail);
 router.post('/forgot',forgotpassword.forgotPassword);
 router.post('/reset',auth,forgotpassword.resetPassword);
 router.post('/facebooklogin',socialsLogin.facebookLogin);
+router.post('/googlelogin',socialsLogin.googleLogin);
 router.get('/infor',checkAuth,profileController.getUserInfor);
 router.patch('/update',checkAuth,profileController.updateUser);
 
