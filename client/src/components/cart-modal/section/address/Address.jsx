@@ -38,6 +38,9 @@ function Address() {
               <input type="text" className="address-state-country" />
             </div>
           </div>
+          <div className="address-b">
+            <button>Submit</button>
+          </div>
         </form>
       </div>
     </div>
