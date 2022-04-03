@@ -54,7 +54,7 @@
 .cart-modal-body .cart-modal-body-content {
     font-size: 1rem;
     background: #eee;
-    height: 40rem;
+    height: 41rem;
     Color: #333;
     padding: 1rem;
     margin: 1rem 0 2rem 0;    
@@ -124,4 +124,8 @@
 
 .radio input:checked~.cart-circle:after {
     opacity: 1;
+}
+
+.cart-button-space {
+    height: 80px;
 }
