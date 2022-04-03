@@ -64,8 +64,8 @@ function Cart_Modal({  showModal, closeX}) {
             </div>
           </div>
           <div className="cart-modal-body-content">
-            {page === "delivery" && <Delivery deliver={deliver} setDeliver={setDeliver} />}
-            {page === "address" && <Address buyerInfor={buyerInfor} setBuyInfo={setBuyInfo} />}
+            {page === "delivery" && <Delivery deliver={deliver} setDeliver={setDeliver}/>}
+            {page === "address" && <Address buyerInfor={buyerInfor} setBuyInfo={setBuyInfo}/>}
             {page === "payment" && <Payment />} 
           </div>
         </div>
