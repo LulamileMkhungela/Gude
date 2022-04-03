@@ -20,10 +20,11 @@ const Login = ({history}) => {
     const [success,setSuccess] = useState(false)
 
     const responseGoogle = async (response) => {
+
         try {
             const res = await axios.post('http://localhost:8080/auth/googlelogin', {tokenId: response.tokenId})
-
-              history.push('/')
+                console.log(res.data.data)
+              history.push('/home')
         } catch (err) {
          
             
