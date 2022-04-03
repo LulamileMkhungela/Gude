@@ -11,26 +11,26 @@ const MobileExplore = ({history}) => {
         <div className={'mobile-explore'}>
             <MobileProductPromo/>
             <HMenu/>
-            <div className={'list-header'}>
+            <div className={'list-header bd'}>
                 <span>Electronics</span>
                 <i className="material-icons more-icon bd">chevron_right</i>
             </div>
 
-            <div className={'home-listing'}>
+            <div className={'home-listing bd'}>
                 <ul>
-                    <li className={''} onClick={() => history.push('/home/fjsdskfdsdgj')}>
+                    <li className={'bd'} onClick={() => history.push('/home/fjsdskfdsdgj')}>
                         <HomeProduct />
                     </li>
 
-                    <li className={''}>
+                    <li className={'bd'}>
                         <HomeProduct />
                     </li>
 
-                    <li className={''}>
+                    <li className={'bd'}>
                         <HomeProduct />
                     </li>
 
-                    <li className={''}>
+                    <li className={'bd'}>
                         <HomeProduct />
                     </li>
                 </ul>

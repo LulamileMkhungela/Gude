@@ -1,50 +1,13 @@
 .mobile-bottom-nav {
-  height: 70px;
+  height: 60px;
   width: 100%;
   position: fixed;
-  bottom: 15px;
+  bottom: 0;
   left: 0;
   right: 0;
   background-color: #FFFFFF;
   z-index: 1081;
+  border: 1px solid red;
+  box-sizing: border-box;
 
-  .row {
-    height: 70px;
-    padding: 0;
-
-    .col-xs-2 {
-      padding: 10px 0 0;
-      text-align: center;
-      .bottom-pro-img {
-        text-align: center;
-
-        img {
-          height: 40px;
-          width: 40px;
-          border-radius: 50%;
-        }
-
-        p {
-          font-size: 12px;
-          font-family: "Rage Italic", sans-serif;
-          font-weight: bolder;
-        }
-      }
-      .fa-home{
-        font-size: 35px;
-        margin-top: 3px;
-        color: lightgray;
-        font-weight: bolder;
-      }
-      .home-text{
-        font-size: 13px;
-        font-weight: bolder;
-        font-family: "Rage Italic",sans-serif;
-      }
-    }
-
-    .col-xs-4 {
-      padding: 0;
-    }
-  }
 }
