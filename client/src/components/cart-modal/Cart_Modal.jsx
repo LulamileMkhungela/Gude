@@ -32,7 +32,7 @@ function Cart_Modal({  showModal, closeX}) {
       }}
     >
       <div className="cart-modal-header">
-        <p>Payment</p>
+        <p>Gude Cart Modal</p>
         <span onClick={closeX} className="cart-close-modal-btn">x</span>
       </div>
       <div className="cart-modal-content">

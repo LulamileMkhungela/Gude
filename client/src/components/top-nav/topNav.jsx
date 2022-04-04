@@ -57,7 +57,7 @@ const TopNav = ({history}) => {
                             <div className={'col-md-8 col-xs-12'}>
                                 <ul>
                                     <li>
-                                        <NavLink to={'#'} activeClassName={'active-link'}>
+                                        <NavLink to={'/messages'} activeClassName={'active-link'}>
                                             <i className={'fab fa-facebook-messenger'}> </i>
                                             <div className={'msg-badge'}><span>9</span></div>
                                         </NavLink>
