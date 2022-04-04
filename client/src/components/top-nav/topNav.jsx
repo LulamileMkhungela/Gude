@@ -63,11 +63,11 @@ const TopNav = ({history}) => {
                                         </NavLink>
                                     </li>
                                     <li>
-                                        <i className="fa fa-bell-o"> </i>
+                                        <i className="fa fa-bell"> </i>
                                         <div className={'msg-badge'}><span>9</span></div>
                                     </li>
                                     <li>
-                                        <i className={'fa fa-heart-o'}> </i>
+                                        <i className={'fa fa-heart'}> </i>
                                         <div className={'msg-badge'}><span>9</span></div>
                                     </li>
                                     <li>
