@@ -26,6 +26,8 @@ import Profile from './pages/profile/Profile';
 import MobileExplore from "./gude-mobile/pages/mobile-explore/mobileExplore";
 import MobileProductPromo from "./gude-mobile/components/mobile-product/mobileProductPromo";
 import MobileDetailProduct from "./gude-mobile/pages/mobile-detail-product/MobileDetailProduct";
+import Messages from "./pages/messages/Messages";
+import Promotion from "./pages/promotion/Promotion";
 
 const App = () => {
     const dispatch = useDispatch()
@@ -70,10 +72,20 @@ const App = () => {
                     <Root>
                         <AddProduct/>
                     </Root>
-                </Route>
+                </Route>/messages
                 <Route path={'/cart'}>
                     <Root>
                         <CartListing/>
+                    </Root>
+                </Route>
+                <Route path={'/messages'}>
+                    <Root>
+                        <Messages/>
+                    </Root>
+                </Route>
+                <Route path={'/promotion'}>
+                    <Root>
+                        <Promotion/>
                     </Root>
                 </Route>
                 <Route path={'/electronics'}>

@@ -7,6 +7,15 @@ import Payment from './section/payment/Payment'
 
 function Cart_Modal({  showModal, closeX}) {
   const [page, setPage] = useState('delivery')
+  const [deliver, setDeliver] = useState("one")
+  const [buyerInfor, setBuyInfo] = useState({
+    phoneNumber: '',
+    street1: '',
+    street2: '',
+    city: '',
+    state: '',
+    country: ''
+  })
   
   const OnChangeValueHandler = (event) => {
     setPage(event.target.value)
@@ -14,6 +23,7 @@ function Cart_Modal({  showModal, closeX}) {
   }
 
   return (
+    <>
     <div 
       className="cart-modal-wrapper"
       style={{
@@ -22,7 +32,7 @@ function Cart_Modal({  showModal, closeX}) {
       }}
     >
       <div className="cart-modal-header">
-        <p>Payment</p>
+        <p>Gude Cart Modal</p>
         <span onClick={closeX} className="cart-close-modal-btn">x</span>
       </div>
       <div className="cart-modal-content">
@@ -54,13 +64,15 @@ function Cart_Modal({  showModal, closeX}) {
             </div>
           </div>
           <div className="cart-modal-body-content">
-            {page === "delivery" && Delivery()}
-            {page === "address" && Address()}
-            {page === "payment" && Payment()}
+            {page === "delivery" && <Delivery deliver={deliver} setDeliver={setDeliver}/>}
+            {page === "address" && <Address buyerInfor={buyerInfor} setBuyInfo={setBuyInfo}/>}
+            {page === "payment" && <Payment />} 
           </div>
         </div>
       </div>
     </div>
+    <div className="cart-button-space"></div>
+    </>
   )
 }
 
