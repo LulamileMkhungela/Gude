@@ -11,7 +11,7 @@ const Home = ({children}) => {
             <MobileTopNav/>
             <MobileBottomNav/>
             <div className={'mobile-explore-content'}>
-                {/*{children}*/}
+                {children}
             </div>
         </div>
     )

@@ -11,51 +11,39 @@ const MobileExplore = ({history}) => {
         <div className={'mobile-explore'}>
             <MobileProductPromo/>
             <HMenu/>
-            <div className={'list-header bd'}>
-                <span>Electronics</span>
-                <i className="material-icons more-icon bd">chevron_right</i>
+            <div className={'product-list-header'}>
+                <span className={''}>Electronics</span>
+                <i className="material-icons">chevron_right</i>
             </div>
 
-            <div className={'home-listing bd'}>
+            <div className={'home-listing'}>
                 <ul>
-                    <li className={'bd'} onClick={() => history.push('/home/fjsdskfdsdgj')}>
+                    <li className={''} onClick={() => history.push('/home/fjsdskfdsdgj')}>
                         <HomeProduct />
                     </li>
 
-                    <li className={'bd'}>
+                    <li className={''}>
                         <HomeProduct />
                     </li>
 
-                    <li className={'bd'}>
+                    <li className={''}>
                         <HomeProduct />
                     </li>
 
-                    <li className={'bd'}>
+                    <li className={''}>
                         <HomeProduct />
                     </li>
                 </ul>
             </div>
 
-            <div className={'list-header bd'}>
-                <span>Electronics</span>
-                <i className="material-icons more-icon bd">chevron_right</i>
+            <div className={'product-list-header'}>
+                <span className={''}>Electronics</span>
+                <i className="material-icons">chevron_right</i>
             </div>
 
-            <div className={'home-listing bd'}>
+            <div className={'home-listing'}>
                 <ul>
-                    <li className={'bd'}>
-                        <HomeProduct />
-                    </li>
-
-                    <li className={'bd'}>
-                        <HomeProduct />
-                    </li>
-
-                    <li className={'bd'}>
-                        <HomeProduct />
-                    </li>
-
-                    <li className={'bd'}>
+                    <li className={''}>
                         <HomeProduct />
                     </li>
                 </ul>

@@ -7,12 +7,19 @@ const MobileTopNav = () => {
         <div className={'mobile-top-nav'}>
 
             <div className={'row-menu'}>
-                <div className={'side-menu bd'}>
-                    <i className="material-icons bd">menu</i>
+                <div className={'side-menu'}>
+                    <i className="material-icons">menu</i>
                 </div>
-                <div className={'search-input bd'}></div>
-                <div className={'notif-icon bd'}>
-                    <i className={'fa fa-bell-o bd'}> </i>
+                <div className={'search-input'}>
+                    <div className={'col-xs-10'}>
+                        <input type={'search'} className={'form-control'} placeholder={'Search On Gude'}/>
+                    </div>
+                    <div className={'col-xs-2'}>
+                        <i className={'fa fa-search'}> </i>
+                    </div>
+                </div>
+                <div className={'notif-icon'}>
+                    <i className={'fa fa-bell-o'}> </i>
                 </div>
             </div>
 
@@ -22,12 +29,12 @@ const MobileTopNav = () => {
             {/*    </div>*/}
             {/*    <div className={'col-xs-8 bd'}>*/}
             {/*        /!*<div className={'wrap'}>*!/*/}
-            {/*        /!*    <div className={'col-xs-10'}>*!/*/}
-            {/*        /!*        <input type={'search'} className={'form-control'} placeholder={'Search On Gude'}/>*!/*/}
-            {/*        /!*    </div>*!/*/}
-            {/*        /!*    <div className={'col-xs-2'}>*!/*/}
-            {/*        /!*        <i className={'fa fa-search'}> </i>*!/*/}
-            {/*        /!*    </div>*!/*/}
+            {/*            <div className={'col-xs-10'}>*/}
+            {/*                <input type={'search'} className={'form-control'} placeholder={'Search On Gude'}/>*/}
+            {/*            </div>*/}
+            {/*            <div className={'col-xs-2'}>*/}
+            {/*                <i className={'fa fa-search'}> </i>*/}
+            {/*            </div>*/}
             {/*        /!*</div>*!/*/}
             {/*    </div>*/}
             {/*    <div className={'col-xs-2 notif-icon bd'}>*/}

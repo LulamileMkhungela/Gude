@@ -4,8 +4,8 @@ import './hMenu.scss';
 
 const HMenu = () => {
     return(
-        <div className={'h-menu bd'}>
-            <ul className={'bd'}>
+        <div className={'h-menu'}>
+            <ul className={''}>
                 <li>All</li>
                 <li>Electronics</li>
                 <li>Outdoor</li>

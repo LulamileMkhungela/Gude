@@ -12,30 +12,30 @@ const MobileDetailProduct = () => {
 
     return (
         <div className={'mobile-product-detail'}>
-            <div className={'mobile-product-detail-back bd'}>
+            <div className={'mobile-product-detail-back'}>
                 <i className="material-icons">arrow_back</i>
             </div>
-            <div className={'mobile-product-detail-img bd'}>
+            <div className={'mobile-product-detail-img'}>
                 <img src={img} alt={''}/>
             </div>
             <div className={'detail-product-pro-img'}>
                 <img src={img} alt={''}/>
             </div>
-            <div className={'detail-info bd'}>
+            <div className={'detail-info'}>
                 <div className={'location-time'}>
-                    <span>Ga-Rankuwa . 2 Hour ago</span>
+                    <span>Ga-Rankuwa &#xb7; 2 Hour ago</span>
                 </div>
 
-                <div className={'row product-name-price bd'}>
-                    <div className={'col-xs-10 bd'}>
+                <div className={'row product-name-price'}>
+                    <div className={'col-xs-10'}>
                         <span>Product Name</span>
                     </div>
-                    <div className={'col-xs-2 bd'}>
+                    <div className={'col-xs-2'}>
                         <span>R300</span>
                     </div>
                 </div>
 
-                <div className={'h-detail-product-menu bd'}>
+                <div className={'h-detail-product-menu'}>
                     <ul className={''}>
                         <li onClick={() => {
                             setDesc(true)
@@ -60,21 +60,21 @@ const MobileDetailProduct = () => {
                                     <span>Similar Items</span>
                                     <i className="material-icons more-icon bd">chevron_right</i>
                                 </div>
-                                <div className={'home-listing bd'}>
+                                <div className={'home-listing'}>
                                     <ul>
-                                        <li className={'bd'}>
+                                        <li className={''}>
                                             <HomeProduct />
                                         </li>
 
-                                        <li className={'bd'}>
+                                        <li className={''}>
                                             <HomeProduct />
                                         </li>
 
-                                        <li className={'bd'}>
+                                        <li className={''}>
                                             <HomeProduct />
                                         </li>
 
-                                        <li className={'bd'}>
+                                        <li className={''}>
                                             <HomeProduct />
                                         </li>
                                     </ul>
