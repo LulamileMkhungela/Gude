@@ -1,50 +1,79 @@
 .mobile-bottom-nav {
-  height: 70px;
+  height: 60px;
   width: 100%;
   position: fixed;
-  bottom: 15px;
+  bottom: 0;
   left: 0;
   right: 0;
   background-color: #FFFFFF;
   z-index: 1081;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border-top: 0.05em solid rgba(211,211,211,.290);
 
-  .row {
-    height: 70px;
-    padding: 0;
-
-    .col-xs-2 {
-      padding: 10px 0 0;
-      text-align: center;
-      .bottom-pro-img {
-        text-align: center;
-
-        img {
-          height: 40px;
-          width: 40px;
-          border-radius: 50%;
-        }
-
-        p {
-          font-size: 12px;
-          font-family: "Rage Italic", sans-serif;
-          font-weight: bolder;
-        }
-      }
-      .fa-home{
-        font-size: 35px;
-        margin-top: 3px;
-        color: lightgray;
-        font-weight: bolder;
-      }
-      .home-text{
-        font-size: 13px;
-        font-weight: bolder;
-        font-family: "Rage Italic",sans-serif;
-      }
+  .home{
+    margin: auto;
+    i{
+      font-size: 30px;
+      margin-top: 5px;
     }
-
-    .col-xs-4 {
-      padding: 0;
+    p{
+      font-weight: bolder;
     }
+  }
+  .btm-cart{
+    margin: auto;
+    i{
+      font-size: 25px;
+      margin-top: 5px;
+      font-weight: bolder;
+    }
+    p{
+      font-weight: bolder;
+    }
+  }
+  .add{
+    margin: auto;
+    i{
+      font-size: 30px;
+      color: #DE3434;
+      border-radius: 50%;
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+      margin-top: 3px;
+    }
+    p{
+      font-weight: bolder;
+    }
+  }
+  .profile{
+    margin: auto;
+    img{
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-top: 3px;
+      margin-left: 3px;
+    }
+    p{
+      font-weight: bolder;
+    }
+  }
+  .order{
+    margin: auto;
+    img{
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-left: 6px;
+      margin-top: 3px;
+    }
+    p{
+      font-weight: bolder;
+    }
+  }
+  .active{
+    color: #DE3434;
   }
 }

@@ -1,0 +1,33 @@
+.messages-container {
+    margin: 0px;
+    display: flex;
+
+}
+
+.messages-product-container {
+    display: flex;
+    margin-top: 30px;
+    margin-left: 50px;
+    max-width: 1000px;
+    width: 70% auto;
+    height: 450px;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 3px;
+}
+
+.messages-product-container .messages-data-container {
+    padding: 20px;
+    margin-left: 1%;
+}
+
+.messages-searchbar {
+    right: 0px;
+    position:fixed;
+    top:70px;
+    max-width: 500px;
+    width: 20%;
+    height: 1000px;
+    background: rgb(233, 233, 233);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

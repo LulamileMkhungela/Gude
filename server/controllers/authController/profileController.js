@@ -4,10 +4,12 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const profileController = {
     getUserInfor: async (req, res) => {
+        const user =  await User.findOne({_id:req.user.id})
+        
 
-        const {acc_type} = req.body;
+        // const {acc_type} = req.body;
     
-        if (acc_type === 'student'){
+        if (user.acc_type === 'student'){
             try {
 
                //Fetch From Table Students
