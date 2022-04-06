@@ -11,12 +11,12 @@ const HomeProduct = () => {
             </div>
             <span className={'product-name'}>Product Name</span>
             <div className={'product-hl-1'}>
-                <span className={''}>9 Available</span>
+                <span className={'avail'}>9 Available</span>
                 <span className={'price'}>R399</span>
             </div>
             <div className={'product-hl-2'}>
-                <p className={''}>Johannesburg</p>
-                <p className={''}>Date</p>
+                <span className={''}>Johannesburg</span>
+                <span className={''}>Date</span>
             </div>
             <div className={'row'}>
                 <div className={'col-xs-6'}>

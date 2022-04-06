@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import imging from '../../images/logoNew/SocialGraphics (1).png';
 import icon from '../../images/icon.jpeg';
 
+
 import './login.scss';
 import {Link, Redirect} from "react-router-dom";
 import axios from "axios";
@@ -12,6 +13,13 @@ import GoogleLogin from 'react-google-login';
 
 
 const Login = ({history}) => {
+    const [loginData, setLoginData] = useState(
+        localStorage.getItem('loginData')
+          ? JSON.parse(localStorage.getItem('loginData'))
+          : null
+      ); 
+
+
     const [errEmail, setErrEmail] = useState('')
     const [errPass, setErrPass] = useState('')
     const [showResp, setShowResp] = useState(false)
@@ -19,14 +27,24 @@ const Login = ({history}) => {
     const [errMsg, setErrMsg] = useState('')
     const [success,setSuccess] = useState(false)
 
-    const responseGoogle = async (response) => {
+    const responseGoogle = async (googleData) => {
 
         try {
-            const res = await axios.post('http://localhost:8080/auth/googlelogin', {tokenId: response.tokenId})
-                console.log(res.data.data)
-              history.push('/home')
+            console.log(googleData);
+            // const res = await axios.post('http://localhost:8080/auth/googlelogin', {
+            //     method: 'POST',
+            //     body: JSON.stringify({
+            //       token: googleData.tokenId,
+            //     }),
+            //     headers: {
+            //       'Content-Type': 'application/json',
+            //     },
+            //   }); 
+            //   const data = await res.json();
+            //   setLoginData(data);
+            //   localStorage.setItem('loginData', JSON.stringify(data));
         } catch (err) {
-         
+         console.log(err)
             
         }
     }
@@ -137,13 +155,20 @@ const Login = ({history}) => {
                        
                        icon="fa-facebook"
                     />
+                    {loginData ? (
+                        history.push('/home')
+                    ):(
+                       ''   
+                    )
+                    }
                      <GoogleLogin className={'google'}
                         
-                        clientId="1065984606644-bp5svth1umfjg051loi9odk3th5n8sd9.apps.googleusercontent.com"
+                        clientId={process.env.MAILING_SERVICE_CLIENT_ID}
                         buttonText=" Login With Google "
                       
                         onSuccess={responseGoogle}
                         onFailure={resGoogleError}
+                        cookiePolicy={'single_host_origin'}
                        
                     />
                     <br/>
