@@ -15,7 +15,7 @@ const MobileBottomNav = () => {
 
     return (
         <div className={'mobile-bottom-nav bd'}>
-            <div className={`home ${home ? 'active' : ''}`}
+            <div className={`home ${home ? 'link-active' : ''}`}
                  onClick={() => {
                      setHome(true)
                      setCart(false)
@@ -26,7 +26,7 @@ const MobileBottomNav = () => {
                 <i className={'fas fa-home'}> </i>
                 <p className={'home-text'}>Home</p>
             </div>
-            <div className={`btm-cart ${cart ? 'active' : ''}`}
+            <div className={`btm-cart ${cart ? 'link-active' : ''}`}
                  onClick={() => {
                      setHome(false)
                      setCart(true)
@@ -38,7 +38,7 @@ const MobileBottomNav = () => {
                 <i className="material-icons">add_shopping_cart</i>
                 <p>Cart</p>
             </div>
-            <div className={`add ${add ? 'active' : ''}`}
+            <div className={`add ${add ? 'link-active' : ''}`}
                  onClick={() => {
                      setHome(false)
                      setCart(false)
@@ -50,7 +50,7 @@ const MobileBottomNav = () => {
                 <i className={'fa fa-plus-circle'}> </i>
                 <p>Sell</p>
             </div>
-            <div className={`order ${order ? 'active' : ''}`}
+            <div className={`order ${order ? 'link-active' : ''}`}
                  onClick={() => {
                      setHome(false)
                      setCart(false)
@@ -62,7 +62,7 @@ const MobileBottomNav = () => {
                 <img src={ordersIcon} alt={''}/>
                 <p>Orders</p>
             </div>
-            <div className={`profile ${profile ? 'active' : ''}`}
+            <div className={`profile ${profile ? 'link-active' : ''}`}
                  onClick={() => {
                      setHome(false)
                      setCart(false)
