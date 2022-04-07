@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const PostSchema = new mongoose.Schema({
+    _id : mongoose.Schema.Types.ObjectId,
     userId: {
         type: String,
         required: true,
@@ -16,8 +17,8 @@ const PostSchema = new mongoose.Schema({
         type: Array,
         default: [],
     },
-},
-{timestamps: true}
-);
+},{
+    timestamps : true
+});
 
 module.exports = mongoose.model('Post', PostSchema);

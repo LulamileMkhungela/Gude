@@ -14,10 +14,10 @@ router.post("/", async (req, res) => {
 })
 
 // get
-router.get("/:convesationId", async (req, res) => {
+router.get("/:conversationId", async (req, res) => {
     try {
         const messages = await Message.find({
-            convesationId: req.params.convesationId
+            conversationId: req.params.conversationId,
         });
         res.status(200).json(messages);
     } catch(err) {

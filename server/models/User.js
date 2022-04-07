@@ -29,3 +29,5 @@ const userSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('users',userSchema)
+
+//52:36

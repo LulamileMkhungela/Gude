@@ -48,9 +48,9 @@ const messageRoute = require('./routes/chats/messages')
 app.use('/auth', authRoute)
 app.use('/products', sellProductRoute)
 app.use('/add', addToCartRoute)
-app.use('api/posts', postRoute)
-app.use('api/conversations', conversationRoute)
-app.use('api/messages', messageRoute)
+app.use('/api/posts', postRoute)
+app.use('/api/conversations', conversationRoute)
+app.use('/api/messages', messageRoute)
 app.get('/',(req,res) => {
     return res.status(200).json({
         msg : 'It Works Old Server'
