@@ -40,12 +40,17 @@ mongoose.connect('mongodb+srv://Gudee:Addmore%40Digital@cluster0.tisxh.mongodb.n
 const authRoute = require('./routes/auth/authRoute')
 const sellProductRoute = require('./routes/sell-product/sellProductRoute')
 const addToCartRoute = require('./routes/add-to-cart/addToCartRoute')
-
+const postRoute = require('./routes/chats/posts')
+const conversationRoute = require('./routes/chats/conversations')
+const messageRoute = require('./routes/chats/messages')
 
 
 app.use('/auth', authRoute)
 app.use('/products', sellProductRoute)
 app.use('/add', addToCartRoute)
+app.use('api/posts', postRoute)
+app.use('api/conversations', conversationRoute)
+app.use('api/messages', messageRoute)
 app.get('/',(req,res) => {
     return res.status(200).json({
         msg : 'It Works Old Server'
