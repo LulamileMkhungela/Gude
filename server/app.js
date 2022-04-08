@@ -43,11 +43,13 @@ const addToCartRoute = require('./routes/add-to-cart/addToCartRoute')
 const postRoute = require('./routes/chats/posts')
 const conversationRoute = require('./routes/chats/conversations')
 const messageRoute = require('./routes/chats/messages')
+const userRoute = require('./routes/users/users')
 
 
 app.use('/auth', authRoute)
 app.use('/products', sellProductRoute)
 app.use('/add', addToCartRoute)
+app.use('/api/users', userRoute)
 app.use('/api/posts', postRoute)
 app.use('/api/conversations', conversationRoute)
 app.use('/api/messages', messageRoute)

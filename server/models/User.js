@@ -28,6 +28,4 @@ const userSchema = new mongoose.Schema({
     timestamps : true
 })
 
-module.exports = mongoose.model('users',userSchema)
-
-//52:36
+module.exports = mongoose.model('users',userSchema);
