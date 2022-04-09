@@ -4,7 +4,7 @@
 }
 
 .messager-chat-menu {
-    flex: 3.5;
+    flex: 2;
 }
 
 .messager-chat-input {
@@ -16,7 +16,7 @@
 }
 
 .messager-chat-box {
-    flex: 5.5;
+    flex: 7.5;
 }
 
 .messager-chat-box-wrapper {
@@ -53,10 +53,6 @@
     cursor: pointer;
     background-color: teal;
     color: white;
-}
-
-.messager-chat-online {
-    flex: 3;
 }
 
 .messager-chat-menu-wrapper,

@@ -1,20 +1,46 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 import axios from 'axios'
+import { io } from 'socket.io-client'
 
 import './Messager.css'
 import Conversations from './conversations/Conversations'
 import Message from './message/Message'
-import ChatOnline from './chat-online/ChatOnline'
 
 function Messager() {
     const [conversations, setConversations] = useState([])
     const [currentChat, setCurrentChat] = useState(null)
     const [messages, setMessages] = useState([])
     const [newMessage, setNewMessage] = useState("")
+    const [arrivalMessage, setArrivalMessage] = useState(null)
+    
+    const socket = useRef()
     const scrollRef = useRef()
     const user = useSelector(state => state.userLoggedInData.userInfo.id)
+
+    useEffect(() => {
+        socket.current = io("ws://localhost:8900") 
+        socket.current.on("getMessage", data => {
+            setArrivalMessage({
+                sender: data.senderId,
+                text: data.text,
+                createdAt: Date.now(),
+            })
+        })
+    }, [])
+
+    useEffect(() => {
+        arrivalMessage && currentChat?.members.includes(arrivalMessage.sender) && 
+        setMessages((prev) => [...prev, arrivalMessage.sender])
+    }, [arrivalMessage, currentChat])
     
+    useEffect(() => {
+        socket.current.emit("addUser", user) //user._id
+        socket.current.on("getUsers", (users) => {
+            console.log(users)
+        })
+    }, [user])
+
     useEffect(() => {
         const getConversations = async () => {
             try {
@@ -42,10 +68,18 @@ function Messager() {
     const handleSubmit = async (e) =>{
         e.preventDefault()
         const message = {
-            sender: user._id,
+            sender: user,
             text: newMessage,
             conversationId: currentChat._id
         }
+
+        const receiverId = currentChat.members.find((member) => member !== user)
+
+        socket.current.emit("sendMessage", {
+            senderId: user,
+            receiverId,
+            text: newMessage
+        })
 
         try {
             const res = await axios.post("http://localhost:8080/api/messages", message)
@@ -86,7 +120,7 @@ function Messager() {
                             {messages.map((m, index) => {
                                 return (
                                     <div key={index} ref={scrollRef}>
-                                        <Message message={m} own={m.sender === user._id} />    
+                                        <Message message={m} own={m.sender === user} />    
                                     </div>
                                 )
                             })}  
@@ -106,18 +140,8 @@ function Messager() {
                      )}
             </div>
         </div>
-        <div className="messager-chat-online">
-            <div className="messager-chat-online-wrapper">
-                <ChatOnline />
-                <ChatOnline />
-                <ChatOnline />
-                <ChatOnline />
-            </div>
-        </div>
     </div>
   )
 }
 
 export default Messager
-
-// 1:17:10
