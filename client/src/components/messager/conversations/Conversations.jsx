@@ -23,15 +23,6 @@ function Conversations({ conversation, currentUser }) {
 
   return (
     <div className="conversations">
-      <img 
-        src={
-          user?.profileImg 
-          ? PF + user.profileImg
-          : PF + "/profile/default_img.png"
-        } 
-        alt="" 
-        className="conversation-image"
-      />
       <span className="conversation-name">{user?.firstname} {user?.lastname}</span>
     </div>  
   )
