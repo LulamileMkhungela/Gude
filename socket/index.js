@@ -21,7 +21,7 @@ const io = require("socket.io")(8900, {
   
   io.on("connection", (socket) => {
     // when connected
-    console.log("a user connected.");
+    console.log("a user is connected.");
   
     // take userId and socketId from user
     socket.on("addUser", (userId) => {
@@ -40,7 +40,7 @@ const io = require("socket.io")(8900, {
   
     // when disconnect
     socket.on("disconnect", () => {
-      console.log("a user disconnected!");
+      console.log("a user is disconnected!");
       removeUser(socket.id);
       io.emit("getUsers", users);
     });
