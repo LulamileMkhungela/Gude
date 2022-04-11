@@ -75,7 +75,7 @@ module.exports = {
     },
 
     wishListCount : (req,res) => {
-        const wishlist = Cart.find({_user_id : req.body._user_id})
+        const wishlist = WishList.find({_user_id : req.body._user_id})
         wishlist.count((e,count) => {
             if (e){
                 return res.status(200).json({
