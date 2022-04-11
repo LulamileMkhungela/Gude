@@ -8,15 +8,24 @@ import {Link} from "react-router-dom";
 
 import img from '../../images/default_img.png';
 import {addToCartXhr} from "../../states/add-to-cart/addToCartAction";
+import { addToWishListXhr } from "../../states/add-to-wishlist/addWishListAction"
 
 const Product = (props) => {
     const product = props.product;
     const dispatch = useDispatch()
     const userId = useSelector(state => state.userLoggedInData.userInfo.id)
+    
     const addToCart = (e) => {
         e.preventDefault()
         if (userId !== product.product_info._user_id){
             dispatch(addToCartXhr(product.product_info,userId))
+        } 
+    }
+
+    const addToWishList = (e) => {
+        e.preventDefault()
+        if (userId !== product.product_info._user_id) {
+            dispatch(addToWishListXhr(product.product_info, userId))
         }
     }
     return (
@@ -55,7 +64,9 @@ const Product = (props) => {
                         </button>
                     </div>
                     <div className={'col-lg-6 add-to-wishlist'}>
-                        <button className={'btn btn-default'}>
+                        <button onClick={(e) => {
+                            addToWishList(e)
+                        }} className={'btn btn-default'}>
                             <i className={'fa fa-heart-o'}> </i> WISHLIST
                         </button>
                     </div>
