@@ -1,4 +1,3 @@
-
 import defImag from '../../images/default_img.png';
 
 import './topNav.scss';

@@ -90,6 +90,8 @@ function Messager() {
         }
     }
 
+    
+
     useEffect(() => {
         scrollRef.current?.scrollIntoView({ behavior: "smooth" })
     },[messages])
