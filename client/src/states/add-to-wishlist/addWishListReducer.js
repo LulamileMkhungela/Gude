@@ -1,11 +1,10 @@
-
 const iState = {
-    inDec : 0,
+    count : 0,
     loading : false,
     added : null,
 }
 
-const addToWishListReducer = (state = iState, action) =>{
+const addToWishListReducer = (state = iState, action) => {
 
     switch (action.type) {
         case  'ADD_TO_WISHLIST_PROCESS' :
@@ -16,7 +15,7 @@ const addToWishListReducer = (state = iState, action) =>{
             }
         case 'ADD_TO_WISHLIST_SUCCESS' :
             return{
-                inDec: action.payload.inDec,
+                count: action.payload.count,
                 loading: false,
                 added: true
             }
@@ -26,13 +25,15 @@ const addToWishListReducer = (state = iState, action) =>{
                 loading: false,
                 added: false
             }
-        case 'FETCH_ITEM_COUNT' :
+        case 'FETCH_ITEM_COMPUTE' :
             return{
                 ...state,
-                inDec : action.payload.inDec,
+                count : action.payload.count,
             }
         default :
             return state
     }
 
 }
+
+export default addToWishListReducer

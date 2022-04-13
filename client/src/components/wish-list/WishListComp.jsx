@@ -1,18 +1,23 @@
 import React, {useState} from 'react'
+import { useSelector, useDispatch} from "react-redux";
 
 import img1 from '../../images/default_img.png';
 import RespComponent from "../resp-component/respComponent";
 import post from "../../post";
 import {withRouter} from "react-router-dom";
 import Cart_Modal from '../cart-modal/Cart_Modal';
+import {addToCartXhr} from '../../states/add-to-cart/addToCartAction'
 
-function WishListComp({ wish, history }) {
+function WishListComp({ wish, history }, props) {
+    const product = props.product;
     let [quantity, setQuantity] = useState(1);
     const [showResp, setShowResp] = useState(false)
     const [respMsg,setRespMsg] = useState('');
     const [showModal, setShowModal] = useState(false)
 
     const closeModal = () => setShowModal(false);
+    const dispatch = useDispatch()
+    const userId = useSelector(state => state.userLoggedInData.userInfo.id)
     
     const deleteWishListItem = async () => {
         setShowResp(false)
@@ -32,6 +37,13 @@ function WishListComp({ wish, history }) {
         }catch (e) {
             console.log(e)
         }
+    }
+
+    const addToCart = (e) => {
+        e.preventDefault()
+        if (userId !== product.product_info._user_id){
+            dispatch(addToCartXhr(product.product_info,userId))
+        } 
     }
 
   return (
@@ -87,8 +99,10 @@ function WishListComp({ wish, history }) {
                     </div>
                 </div>
                 <div className={'row cart-btn'}>
-                        <div className={'col-lg-5 cart-qty'}>
-                            <button>add to cart</button>
+                        <div className={'col-lg-5 cart-checkout-btn'}>
+                            <button onClick={(e)=>{
+                                addToCart(e)
+                            }} className={'btn btn-default'}>add to cart</button>
                         </div>
                         <div className={'col-lg-5 cart-checkout-btn'}>
                             <button onClick={() => setShowModal(true)} className={'btn btn-default'}>Proceed To Checkout</button>

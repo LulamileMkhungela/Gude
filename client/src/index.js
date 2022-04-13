@@ -12,11 +12,13 @@ import thunk from "redux-thunk";
 import {composeWithDevTools} from "redux-devtools-extension";
 import fetchProductsReducer from "./states/fetch-products/fetchProductsReducer";
 import addToCardReducer from "./states/add-to-cart/addToCardReducer";
+import addToWishListReducer from "./states/add-to-wishlist/addWishListReducer";
 
 const reducers = combineReducers({
     userLoggedInData: fetchUserInfoReducer,
     productData : fetchProductsReducer,
-    addToCart : addToCardReducer
+    addToCart : addToCardReducer,
+    addToWishList: addToWishListReducer,
 })
 
 const store = createStore(reducers, composeWithDevTools(applyMiddleware(thunk)));

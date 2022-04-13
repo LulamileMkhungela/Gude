@@ -11,6 +11,8 @@ const TopNav = ({history}) => {
     const _user_id = useSelector(state => state.userLoggedInData.userInfo.id)
     // const cartItemCount = useSelector(state => state.cart_count)
     const cartCount = useSelector(state => state.addToCart.count)
+    const wishCount = useSelector(state => state.addToWishList.count)
+
     const sellOnGude = async (e) => {
         e.preventDefault()
         await post('http://localhost:8080/auth/check-student',{
@@ -70,8 +72,13 @@ const TopNav = ({history}) => {
                                     <li>
                                         <NavLink to={'/wish-list'} activeClassName={'active-link'}>
                                             <i className={'fa fa-heart'}> </i>
-                                             <div className={'msg-badge'}><span>9</span></div>
                                         </NavLink>
+                                        {
+                                            wishCount  > 0 && wishCount <= 9 && <div className={'msg-badge'}><span>{wishCount}</span></div> 
+                                        }
+                                        {
+                                            wishCount > 9 && <div className={'msg-badge'}><span>{wishCount}</span></div>
+                                        }
                                     </li>
                                     <li>
                                         <NavLink to={'/cart'} activeClassName={'active-link'} activeStyle={{color : 'rgba(255,127,80, 1)'}}>
