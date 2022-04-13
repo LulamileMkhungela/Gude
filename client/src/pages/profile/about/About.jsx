@@ -33,38 +33,33 @@ useEffect(() => {
 
   return (
     <div className="about-container">
-      <form action="#">
         <div className="about-form-content">
           <div className="about-form">
             <div className="about-title">Introduction</div>
             <div className="about-input-boxes">
               <div className="profile-input-box">
                 <MdOutlineWork size={30} className='about-icon'/>
-                <input type="text" placeholder='Enter your occupation' />
+                <p>something here</p>
               </div>
               <div className="profile-input-box">
                 <FaGraduationCap size={30} className='about-icon'/>
-                <input type="text" placeholder='Enter your high school name' />
+                <p>something here</p>
               </div>
               <div className="profile-input-box">
                 <FaGraduationCap size={30} className='about-icon'/>
-                <input type="text" placeholder='Enter your tertiary name' />
+                <p>something here</p>
               </div>
               <div className="profile-input-box">
                 <MdHome size={30} className='about-icon'/>
-                <input type="text" placeholder='Enter your house address' />
+                <p>something here</p>
               </div>
               <div className="profile-input-box">
                 <MdLocationOn size={30} className='about-icon'/>
-                <input type="text" placeholder='Enter your location' />
-              </div>
-              <div className="profile-save-btn">
-                <button className="save-btn">Save</button>
+                <p>something here</p>
               </div>
             </div>
           </div>
         </div>
-      </form>
     </div>
   )
 }

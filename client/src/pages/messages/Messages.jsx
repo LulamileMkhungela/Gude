@@ -5,6 +5,7 @@ import MessageSlider from '../../components/message-slider/MessageSlider'
 import MessageSliderData from '../../components/message-slider/MessageSliderData'
 import MessageData from '../../components/message-information/MessageData'
 import MessageSearch from '../../components/message-search/MessageSearch'
+import Messager from '../../components/messager/Messager'
 
 function Messages() {
   return (
@@ -17,8 +18,8 @@ function Messages() {
           <MessageData />
         </div>
       </div>
-      <div className="messages-searchbar">
-        <MessageSearch />
+      <div className="messages-msg-container">
+        <Messager />
       </div>
     </div>
   )

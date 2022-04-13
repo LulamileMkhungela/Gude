@@ -28,6 +28,8 @@ import MobileProductPromo from "./gude-mobile/components/mobile-product/mobilePr
 import MobileDetailProduct from "./gude-mobile/pages/mobile-detail-product/MobileDetailProduct";
 import Messages from "./pages/messages/Messages";
 import Promotion from "./pages/promotion/Promotion";
+import WishList from "./pages/wish-list/WishList";
+import Notification from "./pages/notification/Notification";
 
 const App = () => {
     const dispatch = useDispatch()
@@ -81,6 +83,16 @@ const App = () => {
                 <Route path={'/messages'}>
                     <Root>
                         <Messages/>
+                    </Root>
+                </Route>
+                <Route path={'/wish-list'}>
+                    <Root>
+                        <WishList/>
+                    </Root>
+                </Route>
+                <Route path={'/notification'}>
+                    <Root>
+                        <Notification/>
                     </Root>
                 </Route>
                 <Route path={'/promotion'}>

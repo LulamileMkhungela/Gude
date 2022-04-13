@@ -1,4 +1,3 @@
-
 import defImag from '../../images/default_img.png';
 
 import './topNav.scss';
@@ -63,12 +62,16 @@ const TopNav = ({history}) => {
                                         </NavLink>
                                     </li>
                                     <li>
-                                        <i className="fa fa-bell"> </i>
-                                        <div className={'msg-badge'}><span>9</span></div>
+                                        <NavLink to={'/notification'} activeClassName={'active-link'}>
+                                            <i className="fa fa-bell"> </i>
+                                            <div className={'msg-badge'}><span>9</span></div>
+                                        </NavLink>
                                     </li>
                                     <li>
-                                        <i className={'fa fa-heart'}> </i>
-                                        <div className={'msg-badge'}><span>9</span></div>
+                                        <NavLink to={'/wish-list'} activeClassName={'active-link'}>
+                                            <i className={'fa fa-heart'}> </i>
+                                             <div className={'msg-badge'}><span>9</span></div>
+                                        </NavLink>
                                     </li>
                                     <li>
                                         <NavLink to={'/cart'} activeClassName={'active-link'} activeStyle={{color : 'rgba(255,127,80, 1)'}}>

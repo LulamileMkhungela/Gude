@@ -20,13 +20,15 @@
     grid-template-columns: 2fr 1fr;
     margin-top: 5px;
     margin-bottom: 5px;
-    span{
+    .avail{
       font-family: "Rage Italic",sans-serif;
       font-weight: bolder;
+      color: lightgray;
       //font-size: 18px;
     }
     .price{
       font-size: 18px;
+      font-weight: bolder;
     }
   }
   .product-hl-2{
