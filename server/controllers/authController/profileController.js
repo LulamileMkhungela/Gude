@@ -5,8 +5,6 @@ const bcrypt = require('bcrypt')
 const profileController = {
     getUserInfor: async (req, res) => {
         const user =  await User.findOne({_id:req.user.id})
-        
-
         // const {acc_type} = req.body;
     
         if (user.acc_type === 'student'){
@@ -45,6 +43,18 @@ const profileController = {
             })
 
             res.json({msg: "Update Success!"})
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+    },
+    get_all_infor: async (req, res) => {
+        try {
+           
+          const userCC =  await User.findOne({_id: req.user.id})
+               console.log(userCC);
+           
+
+           
         } catch (err) {
             return res.status(500).json({msg: err.message})
         }

@@ -31,18 +31,18 @@ const Login = ({history}) => {
 
         try {
             console.log(googleData);
-            // const res = await axios.post('http://localhost:8080/auth/googlelogin', {
-            //     method: 'POST',
-            //     body: JSON.stringify({
-            //       token: googleData.tokenId,
-            //     }),
-            //     headers: {
-            //       'Content-Type': 'application/json',
-            //     },
-            //   }); 
-            //   const data = await res.json();
-            //   setLoginData(data);
-            //   localStorage.setItem('loginData', JSON.stringify(data));
+            const res = await axios.post('http://localhost:8080/auth/googlelogin', {
+                method: 'POST',
+                body: JSON.stringify({
+                  token: googleData.tokenId,
+                }),
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+              }); 
+              const data = await res.json();
+              setLoginData(data);
+              localStorage.setItem('loginData', JSON.stringify(data));
         } catch (err) {
          console.log(err)
             
