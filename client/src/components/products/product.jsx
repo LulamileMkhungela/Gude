@@ -2,16 +2,15 @@ import React, {useState} from "react";
 
 import './product.scss';
 import {useDispatch, connect, useSelector} from "react-redux";
-import post from "../../post";
-import RespComponent from "../resp-component/respComponent";
+//import post from "../../post";
+//import RespComponent from "../resp-component/respComponent";
 import {Link} from "react-router-dom";
 
 import img from '../../images/default_img.png';
 import {addToCartXhr} from "../../states/add-to-cart/addToCartAction";
 import { addToWishListXhr } from "../../states/add-to-wishlist/addWishListAction"
 
-const Product = (props) => {
-    const product = props.product;
+const Product = ({ product }) => {
     const dispatch = useDispatch()
     const userId = useSelector(state => state.userLoggedInData.userInfo.id)
     

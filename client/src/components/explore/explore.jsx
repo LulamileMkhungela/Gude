@@ -5,10 +5,10 @@ import {Link, Redirect, withRouter} from "react-router-dom";
 import PromoProduct from "../products/promoProduct";
 
 import {useDispatch, useSelector} from "react-redux";
-import {fetchProducts} from "../../states/fetch-products/fetchProductsAction";
+//import {fetchProducts} from "../../states/fetch-products/fetchProductsAction";
 import Product from "../products/product";
-import login from "../../pages/login/login";
-import {getItemCount} from "../../states/add-to-cart/addToCartAction";
+//import login from "../../pages/login/login";
+//import {getItemCount} from "../../states/add-to-cart/addToCartAction";
 import RespComponent from "../resp-component/respComponent";
 
 const Explore = () => {
@@ -33,7 +33,7 @@ const Explore = () => {
                 products.length > 0 && !isLoggedIn ? <Redirect to={'/login'} /> : ''
             }
             {
-                isAdded === false ? <RespComponent err={false} msg={'Item Already Added In To Cart'} /> : ''
+                isAdded === false ? <RespComponent err={false} msg={'Item Already Added'} /> : ''
             }
             <div className={'by-category'}>
                 <ul>
