@@ -1,13 +1,23 @@
 const express = require('express')
-const app = express();
-
-require('dotenv').config()
 const morgan = require('morgan')
 const cors = require('cors')
-const mongoose = require('mongoose')
 const fileUpload = require('express-fileupload')
 const cookieParser = require('cookie-parser')
- 
+const DB_connection = require('./config/db')
+
+//Import Middleware Routes
+const authRoute = require('./routes/auth/authRoute')
+const sellProductRoute = require('./routes/sell-product/sellProductRoute')
+const addToCartRoute = require('./routes/add-to-cart/addToCartRoute')
+const wishlistRoute = require('./routes/add-to-wishlist/wishList')
+const conversationRoute = require('./routes/chats/conversations')
+const messageRoute = require('./routes/chats/messages')
+const userRoute = require('./routes/users/users')
+const paymentRoute = require('./routes/payment-modal/paymentModal')
+
+const app = express();
+require('dotenv').config()
+DB_connection()
 
 app.use(express.urlencoded({extended:true}))
 app.use(morgan('dev'))
@@ -21,31 +31,6 @@ app.use(fileUpload({ useTempFiles: true }))
 app.use(cookieParser())
 
 app.use('/product-images', express.static(__dirname + '/product-images'));
-
-
-//mongodb+srv://Kamzen:%40Kamzen1998@cluster0.xb7pk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-// mongodb+srv://Gudee:<password>@cluster0.tisxh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-
-mongoose.connect('mongodb+srv://Gudee:Addmore%40Digital@cluster0.tisxh.mongodb.net/gude-db?retryWrites=true&w=majority',{
-
-},(err) => {
-    if (err){
-        console.log(err)
-    }else{
-        console.log('Mongoose Connected Successfully')
-    }
-})
-
-//Import Middleware Routes
-const authRoute = require('./routes/auth/authRoute')
-const sellProductRoute = require('./routes/sell-product/sellProductRoute')
-const addToCartRoute = require('./routes/add-to-cart/addToCartRoute')
-const wishlistRoute = require('./routes/add-to-wishlist/wishList')
-const conversationRoute = require('./routes/chats/conversations')
-const messageRoute = require('./routes/chats/messages')
-const userRoute = require('./routes/users/users')
-
-
 app.use('/auth', authRoute)
 app.use('/products', sellProductRoute)
 app.use('/add', addToCartRoute)
@@ -53,6 +38,8 @@ app.use('/api/wishlist', wishlistRoute)
 app.use('/api/users', userRoute)
 app.use('/api/conversations', conversationRoute)
 app.use('/api/messages', messageRoute)
+//app.use('/api/modal', paymentRoute)
+
 app.get('/',(req,res) => {
     return res.status(200).json({
         msg : 'It Works Old Server'
