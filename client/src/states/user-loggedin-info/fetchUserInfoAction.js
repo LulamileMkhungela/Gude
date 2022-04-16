@@ -37,3 +37,8 @@ export const fetchUserInfo = (jwt) => {
         })
     }
 }
+
+export const logout = () => async (dispatch) => {
+    localStorage.removeItem("userInfo")
+    dispatch({type: 'USER_LOGOUT'})
+}

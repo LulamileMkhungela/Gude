@@ -6,8 +6,10 @@ import {NavLink, withRouter} from "react-router-dom";
 import SearchModal from "../search-modal/searchModal";
 import {useEffect, useState} from "react";
 import post from "../../post";
-const TopNav = ({history}) => {
+import UserProfile from './section/UserProfile'
 
+const TopNav = ({history}) => {
+    const [collapse, setCollapse] = useState(false)
     const _user_id = useSelector(state => state.userLoggedInData.userInfo.id)
     // const cartItemCount = useSelector(state => state.cart_count)
     const cartCount = useSelector(state => state.addToCart.count)
@@ -92,7 +94,7 @@ const TopNav = ({history}) => {
                                         }
 
                                     </li>
-                                    <li><div className={'pro-img'} onClick={() => history.push('/profile')}><img src={defImag} alt={''}/></div></li>
+                                    <li><div className={'pro-img'}><UserProfile collapse={collapse} setCollapse={setCollapse} _user_id={_user_id} /></div></li>
                                 </ul>
                             </div>
 

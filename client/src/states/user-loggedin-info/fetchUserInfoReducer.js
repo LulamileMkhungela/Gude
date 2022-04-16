@@ -18,7 +18,7 @@ const fetchUserInfoReducer = (state = iSate,action) => {
                 userInfo: action.payload.userInfo,
                 err : '',
                 loading: false,
-                isLoggedIn: true
+                isLoggedIn: true,
             }
         case 'FETCH_USER_FAILURE' :
             return{
@@ -26,6 +26,11 @@ const fetchUserInfoReducer = (state = iSate,action) => {
                 err: action.payload.msg,
                 isLoggedIn: false,
                 loading: false
+            }
+        case 'USER_LOGOUT':
+            return {
+                isLoggedIn: false,
+                userInfo: null,
             }
         default :
             return state;
