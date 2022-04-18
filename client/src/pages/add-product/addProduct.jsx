@@ -9,6 +9,7 @@ import image_2 from '../../assets/img_2.png';
 import RespComponent from "../../components/resp-component/respComponent";
 import {withRouter} from "react-router-dom";
 import {useSelector} from "react-redux";
+import Post from "../../post";
 
 const AddProduct = ({history}) => {
     const [preview, setPreview] = useState(null);
@@ -29,21 +30,32 @@ const AddProduct = ({history}) => {
         e.preventDefault()
         const formData = new FormData(document.querySelector('#sell-form'))
         formData.append('_user_id', userInfo.id)
+        formData.append('payment_method',`${neg ? 'Negotiate/Exchange' : null, visa ? 'Visa' : null, payPal ? 'PayPal' : null, cash ? 'Cash' : null}`)
         setShowResp(false)
-        await axios({
-            url: 'http://localhost:8080/products/sell',
-            method: 'POST',
-            data: formData
-        }).then(resp => {
-            if (!resp.data.err){
-                setShowResp(true)
-                setErr(!resp.data.err)
-                setMsg(resp.data.msg)
-                setTimeout(() => {
-                    history.push('/home')
-                }, 1000)
-            }
-        })
+        try{
+            const resp = await Post('http://localhost:8080/products/sell', formData)
+            console.log(resp)
+
+        }catch (e) {
+
+            console.log('Error Connecting To The Server : ' + e)
+
+        }
+
+        // await axios({
+        //     url: 'http://localhost:8080/products/sell',
+        //     method: 'POST',
+        //     data: formData
+        // }).then(resp => {
+        //     if (!resp.data.err){
+        //         setShowResp(true)
+        //         setErr(!resp.data.err)
+        //         setMsg(resp.data.msg)
+        //         setTimeout(() => {
+        //             history.push('/home')
+        //         }, 1000)
+        //     }
+        // })
     }
     // const validateISBN = (e) => {
     //     axios({
@@ -82,7 +94,7 @@ const AddProduct = ({history}) => {
                                     e.target.value === 'other' ? setOther(true) : setOther(false)
                                 }}
                             >
-                                <option>Select Category</option>
+                                <option value={''}>Select Category</option>
                                 <option value={'electronic'}>Electronics</option>
                                 <option value={'freebie'}>Freebies</option>
                                 <option value={'phone'}>Phones</option>
@@ -96,11 +108,12 @@ const AddProduct = ({history}) => {
                             </select>
                             <br/>
                             {
-                                other && <><input type={'text'} name={'other'} placeholder={'Category'} className={'form-control'}/><br /></>
+                                other && <><input type={'text'} name={'other'} placeholder={'If Other, Enter Category'} className={'form-control'}/><br /></>
                             }
                             <input type={'file'}
                                    className={'form-control'}
                                    multiple={true}
+                                   accept={'image/*'}
                                    name={'product_img_url'}
                                    onChange={e => {
 
@@ -128,13 +141,11 @@ const AddProduct = ({history}) => {
                                 <option>Used</option>
                             </select>
                             <br/>
-                            <input name={'price'} type={'text'} className={'form-control'}
+                            <input name={'price'} type={'number'} className={'form-control'}
                                    placeholder={'Type Your Price'}/>
                             <br/>
                             <input name={'quantity'} type={'number'} className={'form-control'}
                                    placeholder={'Number Of Items'}/>
-                            <br/>
-                            <input name={'location'} type={'text'} className={'form-control'} placeholder={'Location'}/>
                             <br/>
                             <label>Payment Methods</label>
                             <div className={'payment-method'}>
@@ -174,8 +185,8 @@ const AddProduct = ({history}) => {
                             <p>Description : </p>
                             <p>Number Of Items : </p>
                             <p>Condition : </p>
-                            <p>Location : </p>
-                            <img src={image_1} alt={''} className={'map-image'}/>
+                            {/*<p>Location : </p>*/}
+                            {/*<img src={image_1} alt={''} className={'map-image'}/>*/}
                             <br/>
                             <br/>
                             <p><span style={{

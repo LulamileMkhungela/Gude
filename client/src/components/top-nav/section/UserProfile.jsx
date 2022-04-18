@@ -2,7 +2,7 @@ import React from 'react'
 import  { Link, useHistory } from 'react-router-dom'
 import { CgProfile } from "react-icons/cg"
 import { MdLogout } from "react-icons/md";
-import { useDispatch } from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 
 import defImag from '../../../images/default_img.png'
 import './UserProfile.css'
@@ -11,6 +11,8 @@ import { logout } from '../../../states/user-loggedin-info/fetchUserInfoAction'
 const UserProfile = ({ collapse, setCollapse, _user_id  }) => {
     const history = useHistory()
     const dispatch = useDispatch()
+
+    const userInfo = useSelector(state => state.userLoggedInData.userInfo)
 
     const logoutHandler = () => {
         dispatch(logout())
@@ -26,7 +28,7 @@ const UserProfile = ({ collapse, setCollapse, _user_id  }) => {
              <div className="profile-prof">
                  <img src={defImag} alt={''} />
                  <div className="info">
-                     <h2>Thabiso Hlatshwayo</h2>
+                     <h2>{ userInfo.firstname + ' ' + userInfo.lastname }</h2>
                  </div>
              </div>
              <ul>

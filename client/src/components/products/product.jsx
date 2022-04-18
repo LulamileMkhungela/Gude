@@ -28,12 +28,14 @@ const Product = ({ product }) => {
         }
     }
     return (
-        <div className={'col-lg-3 single-product'}>
+        <div className={'col-lg-4 single-product'}>
             <div className={'space-product'}>
                 <div className={'product-img'}>
                     <Link to={userId !== product.product_info._user_id ? `/home/${product.product_info._id}` : '#'}>
-                        <img src={product.product_info.product_img_url} alt={''}/>
+                        <img src={product.product_info.product_img_url[0]} alt={''}/>
                     </Link>
+                    <i className="material-icons slide-left">keyboard_arrow_left</i>
+                    <i className="material-icons slide-right">keyboard_arrow_right</i>
                 </div>
                 <div className={'profile-img'}>
                     <img src={img} alt={''} className={'bd'} />
@@ -51,7 +53,7 @@ const Product = ({ product }) => {
                         <span>SKU Number : 09403049305t4863</span>
                     </div>
                     <div className={'col-lg-4 price'}>
-                        <span>{product.product_info.price}</span>
+                        <span>{product.product_info.price > 0 ? 'R' + product.product_info.price : 'Freebies'}</span>
                     </div>
                 </div>
                 <div className={'row product-btn'}>

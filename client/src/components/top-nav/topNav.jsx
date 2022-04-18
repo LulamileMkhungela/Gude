@@ -94,7 +94,7 @@ const TopNav = ({history}) => {
                                         }
 
                                     </li>
-                                    <li><div className={'pro-img'}><UserProfile collapse={collapse} setCollapse={setCollapse} _user_id={_user_id} /></div></li>
+                                    <li className={'bd'}><div className={'pro-img'}><UserProfile collapse={collapse} setCollapse={setCollapse} _user_id={_user_id} /></div></li>
                                 </ul>
                             </div>
 

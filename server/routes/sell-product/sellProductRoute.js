@@ -6,12 +6,29 @@ const sellProductController = require('../../controllers/productController/sellP
 const getAllProductsController = require('../../controllers/productController/getAllProductsController')
 const searchProductsController = require('../../controllers/productController/searchProductsController')
 const getSingleProductController = require('../../controllers/productController/getSingleProductController');
+const {body} = require("express-validator");
+
+
+const validatePost = [
+    body('category', 'Category Required').notEmpty(),
+    body('title','Title Required').notEmpty(),
+    body('desc','Description Required').notEmpty(),
+    body('condition','Condition Required').notEmpty(),
+    body('price','Price Required').notEmpty(),
+    body('quantity','Quantity Required').notEmpty(),
+    // body('category').custom(val => {
+    //     if (body('other').notEmpty()){
+    //         throw new Error('Other Category Required')
+    //     }
+    // })
+
+]
 
 /*
     Routes Related To Selling A Product, Updating It, Deleting It,
  */
 
-router.post('/sell', sellProductController)
+router.post('/sell',  validatePost, sellProductController)
 
 /*
     Fetch All Products Route
