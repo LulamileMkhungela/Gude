@@ -58,7 +58,7 @@ const TopNav = ({history}) => {
                             </div>
 
                             <div className={'col-md-8 col-xs-12'}>
-                                <ul>
+                                <ul className={''}>
                                     <li>
                                         <NavLink to={'/messages'} activeClassName={'active-link'}>
                                             <i className={'fab fa-facebook-messenger'}> </i>
@@ -94,7 +94,7 @@ const TopNav = ({history}) => {
                                         }
 
                                     </li>
-                                    <li className={'bd'}><div className={'pro-img'}><UserProfile collapse={collapse} setCollapse={setCollapse} _user_id={_user_id} /></div></li>
+                                    <li><div className={'pro-img'}><UserProfile collapse={collapse} setCollapse={setCollapse} _user_id={_user_id} /></div></li>
                                 </ul>
                             </div>
 
