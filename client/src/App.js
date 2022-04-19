@@ -24,12 +24,12 @@ import {getItemCount} from "./states/add-to-cart/addToCartAction";
 import Home from "./gude-mobile/pages/home/home";
 import Profile from './pages/profile/Profile';
 import MobileExplore from "./gude-mobile/pages/mobile-explore/mobileExplore";
-import MobileProductPromo from "./gude-mobile/components/mobile-product/mobileProductPromo";
 import MobileDetailProduct from "./gude-mobile/pages/mobile-detail-product/MobileDetailProduct";
 import Messages from "./pages/messages/Messages";
 import Promotion from "./pages/promotion/Promotion";
 import WishList from "./pages/wish-list/WishList";
-import Notification from "./pages/notification/Notification";
+import Message from "./gude-mobile/pages/message/message";
+// import Notification from "./pages/notification/Notification";
 
 const App = () => {
     const dispatch = useDispatch()
@@ -81,20 +81,20 @@ const App = () => {
                     </Root>
                 </Route>
                 <Route path={'/messages'}>
-                    <Root>
-                        <Messages/>
-                    </Root>
+                    {
+                        window.screen.width <= 768 ? <Home><Message /></Home> : <Root><Messages /></Root>
+                    }
                 </Route>
                 <Route path={'/wish-list'}>
                     <Root>
                         <WishList/>
                     </Root>
                 </Route>
-                <Route path={'/notification'}>
-                    <Root>
-                        <Notification/>
-                    </Root>
-                </Route>
+                {/*<Route path={'/notification'}>*/}
+                {/*    <Root>*/}
+                {/*        <Notification/>*/}
+                {/*    </Root>*/}
+                {/*</Route>*/}
                 <Route path={'/promotion'}>
                     <Root>
                         <Promotion/>

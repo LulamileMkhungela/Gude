@@ -13,7 +13,7 @@ const wishlistRoute = require('./routes/add-to-wishlist/wishList')
 const conversationRoute = require('./routes/chats/conversations')
 const messageRoute = require('./routes/chats/messages')
 const userRoute = require('./routes/users/users')
-const paymentRoute = require('./routes/payment-modal/paymentModal')
+// const paymentRoute = require('./routes/payment-modal/paymentModal')
 
 const app = express();
 require('dotenv').config()

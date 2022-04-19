@@ -3,10 +3,12 @@ import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa'
 
 import './ImageSlider.css'
 import SliderData from './SliderData'
+import {useSelector} from "react-redux";
 
 function ImageSlider({ slides }) {
     const [current, setCurrent] = useState(0)
     const length = slides.length
+    const productImgs = useSelector(state => state.productData.productInfo.product_img_url)
 
     /**
      * Next image comes up when clicking the right arrow icon
