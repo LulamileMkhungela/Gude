@@ -15,7 +15,7 @@ const SideNav = ({history}) => {
                 <li className={'list-group-item'} onClick={()=>history.push('/electronics')}>
                     <Link to={'/electronics'}>
                         <i className="material-icons devices">devices</i>
-                        Electronics
+                        <span className={'electronic-text'}>Electronics</span>
                     </Link>
                 </li>
                 <li className={'list-group-item'} onClick={()=>history.push('/outdoors')}>

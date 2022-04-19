@@ -1,4 +1,3 @@
-
 const mongoose = require("mongoose");
 
 const ProductSchema = new mongoose.Schema({
@@ -7,17 +6,11 @@ const ProductSchema = new mongoose.Schema({
             type: String,
             required: true,
         },
-        product_img_url: {
+        other: {
             type: String,
-            required: true
         },
-        isbn: {
-            type: Number,
-            default: null
-        },
-        imei: {
-            type: Number,
-            default: null
+        product_img_url: {
+            type: Array,
         },
         title: {
             type: String,
@@ -38,10 +31,6 @@ const ProductSchema = new mongoose.Schema({
         quantity: {
             type: Number,
             required: true,
-        },
-        location: {
-            type: String,
-            required: true
         },
         payment_method: {
             type: String,

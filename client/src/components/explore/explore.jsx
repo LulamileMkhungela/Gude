@@ -35,30 +35,36 @@ const Explore = () => {
             {
                 isAdded === false ? <RespComponent err={false} msg={'Item Already Added'} /> : ''
             }
-            <div className={'by-category'}>
-                <ul>
-                    <li>
-                        <Link to={''}>New Arrivals</Link>
-                    </li>
-                    <li>
-                        <Link to={''}>On Sale</Link>
-                    </li>
-                    <li>
-                        <Link to={''}>Black Friday</Link>
-                    </li>
-                    <li>
-                        <Link to={''}>Weekly Sale</Link>
-                    </li>
-                </ul>
-            </div>
+            {/*<div className={'by-category'}>*/}
+            {/*    <ul>*/}
+            {/*        <li>*/}
+            {/*            <Link to={''}>New Arrivals</Link>*/}
+            {/*        </li>*/}
+            {/*        <li>*/}
+            {/*            <Link to={''}>On Sale</Link>*/}
+            {/*        </li>*/}
+            {/*        <li>*/}
+            {/*            <Link to={''}>Black Friday</Link>*/}
+            {/*        </li>*/}
+            {/*        <li>*/}
+            {/*            <Link to={''}>Weekly Sale</Link>*/}
+            {/*        </li>*/}
+            {/*    </ul>*/}
+            {/*</div>*/}
             <br/>
             <div className={'row'}>
-                <PromoProduct/>
-                {
-                    products.length > 0 && products.map((product, i) => {
-                        return <Product product={product} key={i}/>
-                    })
-                }
+                <div className={'col-lg-9'}>
+                    {/*<PromoProduct/>*/}
+                    {
+                        products.length > 0 && products.map((product, i) => {
+                            return <Product product={product} key={i}/>
+                        })
+                    }
+                </div>
+                <div className={'col-lg-3'}>
+                {/*  Add Filters To Be Saved In The Database & Reset Button To Reset To Initial Filters  */}
+                </div>
+
             </div>
         </div>
     )
