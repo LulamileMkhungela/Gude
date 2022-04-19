@@ -48,7 +48,6 @@ router.post('/reset',auth,forgotpassword.resetPassword);
 router.post('/facebooklogin',socialsLogin.facebookLogin);
 router.post('/googlelogin',socialsLogin.googleLogin);
 router.get('/infor',checkAuth,profileController.getUserInfor);
-router.get('/get_all_infor',checkAuth,authAccCheck,profileController.get_all_infor);
 router.patch('/update',checkAuth,profileController.updateUser);
 
 module.exports = router

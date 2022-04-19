@@ -15,7 +15,7 @@ const accType = useSelector(state => state.userLoggedInData.userInfo.acc_type);
 
 useEffect(() => {
 
-  if(accType) {
+  if(accType==='student') {
     ( async () => {
       console.log(accType)
       await axios({

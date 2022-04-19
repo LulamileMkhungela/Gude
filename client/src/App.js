@@ -29,7 +29,7 @@ import MobileDetailProduct from "./gude-mobile/pages/mobile-detail-product/Mobil
 import Messages from "./pages/messages/Messages";
 import Promotion from "./pages/promotion/Promotion";
 import WishList from "./pages/wish-list/WishList";
-import Notification from "./pages/notification/Notification";
+// import Notification from "./pages/notification/Notification";
 
 const App = () => {
     const dispatch = useDispatch()
@@ -56,7 +56,7 @@ const App = () => {
                 <Route path={'/recovery'} component={Recovery}/>
                 <Route path={'/forgot'} component={Forgot}/>
                 <Route path={'/user/reset/:token'} component={Reset}/>
-                <Route path={'/student/activate/:activation_token'} component={ActivationEmail}/>
+        <Route path={'/student/activate/:activation_token'} component={ActivationEmail}/>
                 {/*
                 Private Routes
               */}
@@ -90,11 +90,11 @@ const App = () => {
                         <WishList/>
                     </Root>
                 </Route>
-                <Route path={'/notification'}>
+                {/* <Route path={'/notification'}>
                     <Root>
                         <Notification/>
                     </Root>
-                </Route>
+                </Route> */}
                 <Route path={'/promotion'}>
                     <Root>
                         <Promotion/>

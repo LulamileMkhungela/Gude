@@ -36,29 +36,37 @@ const profileController = {
        
     },
     updateUser: async (req, res) => {
+        const {acc_type} = req.body;
         try {
-            const {firstname,lastname,} = req.body
-            await User.findOneAndUpdate({_id: req.user.id}, {
-                firstname,lastname
+              if (acc_type === 'student')
+              {
+    
+                    //update from the student
+                    const { tertiary_name,contact, location} = req.body
+                    await Student.findOneAndUpdate({ _student_id: req.user.id}, 
+                        {
+                         tertiary_name, contact,location,
+                        })
+
+           
+            } 
+           //update on user
+            const {firstname, lastname, profileImg} = req.body
+            await User.findOneAndUpdate({_id: req.user.id}, 
+            {
+              lastname,  profileImg,firstname
             })
-
             res.json({msg: "Update Success!"})
-        } catch (err) {
+    }
+    
+    catch (err) {
             return res.status(500).json({msg: err.message})
         }
-    },
-    get_all_infor: async (req, res) => {
-        try {
-           
-          const userCC =  await User.findOne({_id: req.user.id})
-               console.log(userCC);
-           
+    }
+        
 
-           
-        } catch (err) {
-            return res.status(500).json({msg: err.message})
-        }
-    },
+    
+    
 
 }
 
