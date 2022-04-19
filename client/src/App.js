@@ -28,10 +28,6 @@ import MobileDetailProduct from "./gude-mobile/pages/mobile-detail-product/Mobil
 import Messages from "./pages/messages/Messages";
 import Promotion from "./pages/promotion/Promotion";
 import WishList from "./pages/wish-list/WishList";
-<<<<<<< HEAD
-=======
-import Message from "./gude-mobile/pages/message/message";
->>>>>>> a60bb738664ad5210e2e50427f54e972363fdf40
 // import Notification from "./pages/notification/Notification";
 
 const App = () => {
@@ -85,7 +81,7 @@ const App = () => {
                 </Route>
                 <Route path={'/messages'}>
                     {
-                        window.screen.width <= 768 ? <Home><Message /></Home> : <Root><Messages /></Root>
+                        window.screen.width <= 768 ? <Home><Messages /></Home> : <Root><Messages /></Root>
                     }
                 </Route>
                 <Route path={'/wish-list'}>
@@ -93,19 +89,11 @@ const App = () => {
                         <WishList/>
                     </Root>
                 </Route>
-<<<<<<< HEAD
                 {/* <Route path={'/notification'}>
                     <Root>
                         <Notification/>
                     </Root>
                 </Route> */}
-=======
-                {/*<Route path={'/notification'}>*/}
-                {/*    <Root>*/}
-                {/*        <Notification/>*/}
-                {/*    </Root>*/}
-                {/*</Route>*/}
->>>>>>> a60bb738664ad5210e2e50427f54e972363fdf40
                 <Route path={'/promotion'}>
                     <Root>
                         <Promotion/>
