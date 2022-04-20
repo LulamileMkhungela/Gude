@@ -8,7 +8,13 @@ import {useSelector} from "react-redux";
 function ImageSlider({ slides }) {
     const [current, setCurrent] = useState(0)
     const length = slides.length
-    const productImgs = useSelector(state => state.productData.productInfo.product_img_url)
+    const products = useSelector(state => state.productData.products)
+    //console.log(products)
+
+    const userId = useSelector(state => state.userLoggedInData.userInfo.id)
+    const userProducts = products.filter(product => product.user_info._id === userId)
+
+    console.log(userProducts)
 
     /**
      * Next image comes up when clicking the right arrow icon
