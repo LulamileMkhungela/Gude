@@ -13,6 +13,8 @@ import { addToWishListXhr } from "../../states/add-to-wishlist/addWishListAction
 const Product = ({ product }) => {
     const dispatch = useDispatch()
     const userId = useSelector(state => state.userLoggedInData.userInfo.id)
+    const productImages = product.product_info.product_img_url
+    const [imgIndex,setImgIndex] = useState(0)
     
     const addToCart = (e) => {
         e.preventDefault()
@@ -31,12 +33,16 @@ const Product = ({ product }) => {
         <div className={'col-lg-4 single-product'}>
             <div className={'space-product'}>
                 <div className={'product-img'}>
-                    <Link to={userId !== product.product_info._user_id ? `/home/${product.product_info._id}` : '#'}>
-                        <img src={product.product_info.product_img_url[0]} alt={''}/>
+                    <Link to={`/home/${product.product_info._id}`}>
+                        {
+                            productImages.map((productImage, i) => (
+                                imgIndex === i && <img src={productImage} alt={''} key={i}/>
+                            ))
+                        }
                     </Link>
-                    <i className="material-icons slide-left">keyboard_arrow_left</i>
-                    <i className="material-icons slide-right">keyboard_arrow_right</i>
                 </div>
+                <i className="material-icons slide-left" onClick={()=>setImgIndex(imgIndex === productImages.length - 1 ? 0 : imgIndex + 1 )}>keyboard_arrow_left</i>
+                <i className="material-icons slide-right" onClick={()=>setImgIndex(imgIndex === 0? productImages.length - 1 : imgIndex - 1 )}>keyboard_arrow_right</i>
                 <div className={'profile-img'}>
                     <img src={img} alt={''} className={'bd'} />
                 </div>

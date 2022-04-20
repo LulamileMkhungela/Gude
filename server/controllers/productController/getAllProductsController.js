@@ -4,7 +4,7 @@ const User = require('../../models/User')
 const getAllProductsController = async (req,res) => {
     let r = []
     try{
-        const products = await Product.find({})
+        const products = await Product.find({}).sort('-createdAt')
         for (let product of products){
             const user = await User.findById(product._user_id, 'firstname lastname _id')
             const {firstname,lastname, _id} = user;
