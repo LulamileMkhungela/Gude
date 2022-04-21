@@ -40,11 +40,6 @@ const Profile = () => {
   return (
     <div className="profile-container">
         <div className="profile-mother-container">
-            <div className="profile-arrow">
-                <Link to="/home">
-                    <MdArrowBack size={30} color={'black'} />
-                </Link>
-            </div>
             <div className="profile-picture-cointainer">
                 {/* fetch the cover image from the database*/}
                 <img className="profile-cover-image" src={studentCover} alt="" />
