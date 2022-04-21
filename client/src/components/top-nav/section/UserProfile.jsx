@@ -28,7 +28,7 @@ const UserProfile = ({ collapse, setCollapse, _user_id  }) => {
              <div className="profile-prof">
                  <img src={defImag} alt={''} />
                  <div className="info">
-                     <h2>{ userInfo.firstname + ' ' + userInfo.lastname }</h2>
+                     <h2>{ userInfo.firstname /*+ ' ' + userInfo.lastname*/ }</h2>
                  </div>
              </div>
              <ul>
