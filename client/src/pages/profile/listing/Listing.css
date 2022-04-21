@@ -1,14 +1,13 @@
 .listing-container {
     margin-top: 30px;
     align-items: center;
-    max-width: 100%;
-    width: 1050px;
+    width: 90%;
     height: 500px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 5px;
 }
 
-.listing-container .listing-top-container {
+.listing-top-container {
     height: 60px;
     width: 100%;
     background-color: rgb(184, 184, 184);
@@ -17,14 +16,14 @@
     display: flex;
 }
 
-.listing-container .listing-top-container .listing-h5-text {
+.listing-h5-text {
     margin-top: 20px;
     margin-left: 20px;
     font-size: 18px;
     font-weight: 700;
 }
 
-.listing-container .listing-top-container .listing-see-link {
+.listing-see-link {
     margin-top: 10px;
     margin-right: 20px;
     width: 100px;
@@ -35,55 +34,59 @@
     font-weight: 600;
 }
 
-.listing-container .listing-top-container .listing-see-link:hover {
+.listing-see-link:hover {
     background-color: white;
 }
 
-.listing-container .listing-holder-container {
-    display: inline-block;
+.listing-holder-container {
+    display: flex;
+    width: 100%;
 }
 
-.listing-container .listing-holder-container .listing-1st-child {
+.listing-1st-child {
+    width: 45%;
     float: left;
-    margin: 0px;
+    margin: 5px;
 }
 
-.listing-container .listing-holder-container .listing-2nd-child {
+.listing-2nd-child {
+    width: 55%;
     float: right;
-    margin-left: 400px;
+    margin-top: 0px;
+    margin-left: 100px;
 }
 
-.listing-container .listing-holder-container .listing-1st-child .listing-image {
-    max-width: 650%;
-    width: 350%;
-    height: 250%;
+.listing-image {
+    width: 100%;
+    height: 400px
 }
 
-.listing-container .listing-holder-container .listing-2nd-child .listing-h5 {
+.listing-h5 {
+    text-align: center;
     margin: 20px;
     font-size: 30px;
     font-weight: 600;
 }
 
-.listing-container .listing-holder-container .listing-2nd-child .listing-status {
+.listing-status {
     font-weight: 400;
     font-size: 16px;
     color: grey;
     margin-left: 20px;
 }
 
-.listing-container .listing-holder-container .listing-2nd-child .listing-status span {
+.listing-status span {
     margin-left: 5px;
 }
 
-.listing-container .listing-holder-container .listing-2nd-child .listing-sku {
+.listing-sku {
     font-weight: 400;
     font-size: 16px;
     color: grey;
     margin-left: 20px;
 }
 
-.listing-container .listing-holder-container .listing-2nd-child .listing-location {
+.listing-location {
     font-weight: 400;
     font-size: 16px;
     color: grey;
@@ -110,7 +113,7 @@
 
 .listing-2nd-child hr { 
     border: 1px dashed #000; 
-    width: 100%; 
+    width: 90%; 
     margin-left: 20px;
     margin-top: 15px; 
 }
