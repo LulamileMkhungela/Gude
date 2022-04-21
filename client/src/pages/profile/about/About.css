@@ -1,8 +1,7 @@
 .about-container {
     margin-top: 30px;
     padding: 40px 30px;
-    max-width: 100%;
-    width: 100%;
+    width: 90%;
     height: 500px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 5px;
@@ -22,7 +21,7 @@
 }
 
 .about-form-content .about-form {
-    width: calc(400% / 2 -px 25);
+    width: 100%;
     z-index: 0;
 }
 
@@ -40,7 +39,7 @@
     display: flex;
     align-items: center;
     height: 50px;
-    width: 600%;
+    width: 100%;
     margin: 10px 0;
     position: relative;
 }
