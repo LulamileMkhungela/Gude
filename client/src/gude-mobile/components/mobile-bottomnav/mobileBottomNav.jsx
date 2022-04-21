@@ -4,8 +4,9 @@ import img from '../../../images/default_img.png';
 import './mobileBottomNav.scss';
 
 import ordersIcon from '../../images/orders-icon.svg';
+import {withRouter} from "react-router-dom";
 
-const MobileBottomNav = () => {
+const MobileBottomNav = ({history}) => {
 
     const [home, setHome] = useState(true)
     const [cart, setCart] = useState(false)
@@ -22,6 +23,7 @@ const MobileBottomNav = () => {
                      setAdd(false)
                      setOrder(false)
                      setProfile(false)
+                     history.push('home')
                  }}>
                 <i className={'fas fa-home'}> </i>
                 <p className={'home-text'}>Home</p>
@@ -33,6 +35,7 @@ const MobileBottomNav = () => {
                      setAdd(false)
                      setOrder(false)
                      setProfile(false)
+                     history.push('/cart')
                  }}
             >
                 <i className="material-icons">add_shopping_cart</i>
@@ -57,6 +60,7 @@ const MobileBottomNav = () => {
                      setAdd(false)
                      setOrder(true)
                      setProfile(false)
+
                  }}
             >
                 <img src={ordersIcon} alt={''}/>
@@ -78,4 +82,4 @@ const MobileBottomNav = () => {
     )
 }
 
-export default MobileBottomNav;
+export default withRouter(MobileBottomNav);
