@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { MdArrowBack } from "react-icons/md"
 import { FaPen } from "react-icons/fa"
+import { useSelector } from 'react-redux'
 
 import './Profile.css'
 import studentCover from '../../images/student_cover.png'
@@ -13,7 +12,6 @@ import Listing from './listing/Listing'
 import About from './about/About'
 import Draft from './draft/Draft'
 import Sold from './sold/Sold'
-import {useSelector} from "react-redux";
 
 const Profile = () => {
     const [togglestate, SetTogglestate] = useState(1);
@@ -25,6 +23,7 @@ const Profile = () => {
     const [soldItems,setSoldItems] = useState(false)
 
     const accType = useSelector(state => state.userLoggedInData.userInfo.acc_type);
+    const userInfo = useSelector(state => state.userLoggedInData.userInfo)
 
     const closeModalHandler = () => setShow(false);
 
@@ -46,7 +45,7 @@ const Profile = () => {
                 {/* fetch the profile pic from  the database and*/}
                 <img className="profile-picture" src={profilePic} alt="" />
                 {/** fetch the name from the database */}
-                <p className="profile-name">Thabiso Hlatshayo</p>
+                <p className="profile-name">{ userInfo.firstname + ' ' + userInfo.lastname }</p>
                 {show ? <div onClick={closeModalHandler} className="profile-modal-drop"></div> : null}
                 <button onClick={showModalHandler} className="profile-modal">
                     <FaPen size={30} />
