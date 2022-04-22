@@ -1,20 +1,127 @@
 .draft-container {
     margin-top: 30px;
-    margin-left: -150px;
-    margin-right: auto;
-    max-width: 200%;
-    width: 1330px;
-    height: 400px;
+    align-items: center;
+    width: 100%;
+    height: 500px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 5px;
 }
 
-@media screen and (max-width: 800px) {
-    .draft-container {
-        margin-left: auto;
-        margin-right: auto;
-        width: 650px;
-        height: 200px auto;
-        
-    }
+.draft-top-container {
+    height: 60px;
+    width: 100%;
+    background-color: rgb(184, 184, 184);
+    border-radius: 5px 5px 0px 0px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.draft-h5-text {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.draft-see-link {
+    margin-top: 10px;
+    margin-right: 20px;
+    width: 100px;
+    height: 30px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.draft-see-link:hover {
+    background-color: white;
+}
+
+.draft-holder-container {
+    display: flex;
+    width: 100%;
+}
+
+.draft-1st-child {
+    width: 45%;
+    float: left;
+    margin: 5px;
+}
+
+.draft-2nd-child {
+    width: 55%;
+    float: right;
+    margin-top: 0px;
+    margin-left: 100px;
+}
+
+.draft-image {
+    width: 100%;
+    height: 400px
+}
+
+.draft-h5 {
+    text-align: center;
+    margin: 20px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.draft-status {
+    font-weight: 400;
+    font-size: 16px;
+    color: grey;
+    margin-left: 20px;
+}
+
+.draft-status span {
+    margin-left: 5px;
+}
+
+.draft-sku {
+    font-weight: 400;
+    font-size: 16px;
+    color: grey;
+    margin-left: 20px;
+}
+
+.draft-location {
+    font-weight: 400;
+    font-size: 16px;
+    color: grey;
+    margin-left: 20px
+}
+
+.draft-profile {
+    flex-direction: row;
+    display: inline-block;
+}
+
+.draft-profile-image {
+    margin-left: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.draft-fornames {
+    margin-top: -35px;
+    margin-left: 80px;
+    font-weight: 400;
+}
+
+.draft-2nd-child hr { 
+    border: 1px dashed #000; 
+    width: 90%; 
+    margin-left: 20px;
+    margin-top: 15px; 
+}
+
+.draft-description {
+    margin-left: 20px;
+}
+
+.draft-information {
+    margin-left: 20px;
 }
