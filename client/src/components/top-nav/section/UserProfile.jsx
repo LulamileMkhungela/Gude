@@ -1,7 +1,7 @@
 import React from 'react'
 import  { Link, useHistory } from 'react-router-dom'
 import { CgProfile } from "react-icons/cg"
-import { MdLogout } from "react-icons/md";
+import { MdLogout } from "react-icons/md"
 import {useDispatch, useSelector} from 'react-redux'
 
 import defImag from '../../../images/default_img.png'
@@ -28,7 +28,7 @@ const UserProfile = ({ collapse, setCollapse, _user_id  }) => {
              <div className="profile-prof">
                  <img src={defImag} alt={''} />
                  <div className="info">
-                     <h2>{ userInfo.firstname /*+ ' ' + userInfo.lastname*/ }</h2>
+                     <h2>{ userInfo.firstname + ' ' + userInfo.lastname }</h2>
                  </div>
              </div>
              <ul>
