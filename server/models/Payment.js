@@ -32,6 +32,9 @@ const paymentSchema = new mongoose.Schema({
     payment: {
         type: String,
     },
+    quantity: {
+        type: String,
+    },
     price: {
         type: String,
     }
