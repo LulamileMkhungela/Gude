@@ -12,6 +12,7 @@ module.exports = {
         const state = req.body.state
         const country = req.body.country
         const payment = req.body.payment
+        const quantity = req.body.quantity
         const price = req.body.price
 
         const PaymentData = new paymentData({
@@ -25,6 +26,7 @@ module.exports = {
             state: state,
             country: country,
             payment: payment,
+            quantity: quantity,
             price: price,
         })
 
