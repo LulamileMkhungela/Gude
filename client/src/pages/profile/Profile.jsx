@@ -56,28 +56,35 @@ const Profile = () => {
             <div className="profile-info">
                 <div>
                 
-                    <div
-                        className={togglestate === 1 ? "tab-active" : "tabs"}
-                        onClick={() => {
-                            setAbout(false)
-                            setListing(true)
-                            setDraft(false)
-                            setSoldItems(false)
-                            toggleTab(1)
-                        }}>
-                        Your listings
-                    </div>
-                <div
-                        className={togglestate === 2 ? "tab-active" : "tabs"}
-                        onClick={() => {
-                            setAbout(false)
-                            setListing(false)
-                            setDraft(true)
-                            setSoldItems(false)
-                            toggleTab(2)
-                        }}>
-                        Drafts
-                    </div>
+                    {
+                        accType==='student' && <> 
+
+
+                                                <div
+                                                    className={togglestate === 1 ? "tab-active" : "tabs"}
+                                                    onClick={() => {
+                                                        setAbout(false)
+                                                        setListing(true)
+                                                        setDraft(false)
+                                                        setSoldItems(false)
+                                                        toggleTab(1)
+                                                    }}>
+                                                    Your listings
+                                                </div>
+                                                <div
+                                                    className={togglestate === 2 ? "tab-active" : "tabs"}
+                                                    onClick={() => {
+                                                        setAbout(false)
+                                                        setListing(false)
+                                                        setDraft(true)
+                                                        setSoldItems(false)
+                                                        toggleTab(2)
+                                                    }}>
+                                                    Drafts
+                                                </div>
+
+                                            </>
+                    }
                     <div className={togglestate === 3 ? "tab-active" : "tabs"}
                         onClick={() => {
                             setAbout(true)
@@ -88,16 +95,18 @@ const Profile = () => {
                         }}>
                         About
                     </div>
-                    <div className={togglestate === 4 ? "tab-active" : "tabs"}
-                        onClick={() => {
-                            setAbout(false)
-                            setListing(false)
-                            setDraft(false)
-                            setSoldItems(true)
-                            toggleTab(4)
-                        }}>
-                        Sold items
-                    </div>
+                    {
+                        accType==='student' && <div className={togglestate === 4 ? "tab-active" : "tabs"}
+                                                    onClick={() => {
+                                                    setAbout(false)
+                                                    setListing(false)
+                                                    setDraft(false)
+                                                    setSoldItems(true)
+                                                    toggleTab(4)
+                                                    }}>
+                                                    Sold items
+                                                </div>
+                    }
                 </div>
                 <div>
 
