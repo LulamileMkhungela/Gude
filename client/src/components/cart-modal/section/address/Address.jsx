@@ -20,7 +20,6 @@ function Address(props) {
 
   const onSubmit = async (e) => {
     e.preventDefault()
-    await axios.post('',props.buyerInfor)
   }
 
   return (
@@ -56,9 +55,9 @@ function Address(props) {
               <input type="text" className="address-state-country" name="country" value={country} onChange={onInputChange}/>
             </div>
           </div>
-          <div className="address-btn">
+          {/**<div className="address-btn">
             <button className="address-save-btn">save</button>
-          </div>
+  </div>*/}
         </form>
       </div>
     </div>

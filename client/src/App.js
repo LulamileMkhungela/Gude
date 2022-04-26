@@ -31,6 +31,7 @@ import WishList from "./pages/wish-list/WishList";
 
 import Message from "./gude-mobile/pages/message/message";
 import Carts from "./gude-mobile/pages/carts/carts";
+import Profiles from "./gude-mobile/pages/profile/Profiles";
 
 // import Notification from "./pages/notification/Notification";
 
@@ -121,9 +122,9 @@ const App = () => {
                     </Root>
                 </Route>
                 <Route path={'/profile'}>
-                    <Root>
-                        <Profile/>
-                    </Root>
+                    {
+                        window.screen.width <= 768 ? <Home><Profiles /></Home> : <Root><Profile/></Root>
+                    }
                 </Route>
             </Switch>
         </BrowserRouter>

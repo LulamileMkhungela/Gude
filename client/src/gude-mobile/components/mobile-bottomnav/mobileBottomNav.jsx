@@ -60,7 +60,6 @@ const MobileBottomNav = ({history}) => {
                      setAdd(false)
                      setOrder(true)
                      setProfile(false)
-
                  }}
             >
                 <img src={ordersIcon} alt={''}/>
@@ -73,6 +72,7 @@ const MobileBottomNav = ({history}) => {
                      setAdd(false)
                      setOrder(false)
                      setProfile(true)
+                     history.push('/profile')
                  }}
             >
                 <img src={img} alt={''} className={''}/>

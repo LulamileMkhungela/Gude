@@ -1,0 +1,86 @@
+.profiles-top {
+    background: blue;
+    border-radius: 0px 0px 20px 20px;
+    width: 100%;
+    height: 180px;
+    position: fixed;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.profiles-top .profiles-left-arrow {
+    margin: 20px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.profiles-flex {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-name-image {
+    display: flex;
+    margin-left: 20px;
+}
+
+.profile-name-image img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.profile-name-image p {
+    margin: 10px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.profies-btn-container {
+    margin-right: 20px;
+}
+
+.profies-btn-container button {
+    border: 1px white solid;
+    border-radius: 40px;
+    outline: none;
+    background: rgba(0, 0, 0, 0.2);
+    width: 100px;
+    height: 30px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.profile-inline-btn {
+    display: flex;
+}
+
+.profile-line {
+    display: flex;
+    margin-top: 190px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-spacing-active {
+    border-bottom: 3px solid red;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.profile-spacing {
+    font-weight: 500;
+}
+
+.screens {
+    flex-grow: 1;
+}
+
+.profilse-line {
+    border-bottom: 1px solid grey;
+    width: 100%;
+}
