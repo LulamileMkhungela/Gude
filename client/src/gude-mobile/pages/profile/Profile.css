@@ -67,7 +67,7 @@
 }
 
 .profile-spacing-active {
-    border-bottom: 1px solid red;
+    border-bottom: 3px solid red;
     cursor: pointer;
     font-weight: 600;
 }
@@ -78,4 +78,10 @@
 
 .screens {
     flex-grow: 1;
+}
+
+.profilse-line {
+    border-bottom: 1px solid grey;
+    width: 100%;
+    position: fixed;
 }
