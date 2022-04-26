@@ -4,6 +4,7 @@ import './message.scss';
 import SingleMsg from "./singleMsg";
 
 const Message = () => {
+
     return(
         <div className={'mobile-message'}>
             <div className={'row message-top'}>

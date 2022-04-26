@@ -15,12 +15,15 @@ const Product = ({ product }) => {
     const userId = useSelector(state => state.userLoggedInData.userInfo.id)
     const productImages = product.product_info.product_img_url
     const [imgIndex,setImgIndex] = useState(0)
-    
+    console.log(userId,product.user_info._id)
+    console.log(product)
     const addToCart = (e) => {
         e.preventDefault()
-        if (userId !== product.product_info._user_id){
+        if (userId !== product.user_info._id){
             dispatch(addToCartXhr(product.product_info,userId))
-        } 
+        }else {
+            console.log('Cannot Add Product Uploaded By You')
+        }
     }
 
     const addToWishList = (e) => {

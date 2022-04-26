@@ -7,6 +7,9 @@
   background-color: #F6F8FD;
   opacity: 1;
   z-index: 1081;
+  @media screen and (max-width: 768px){
+    display: none;
+  }
   .logo-img{
     width: 100%;
     text-align: center;

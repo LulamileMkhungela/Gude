@@ -1,9 +1,9 @@
 import React from "react";
 
-import './cartProduct.scss';
+import './product.scss';
 import img from '../../images/hp.jpg';
 
-const CartProduct = () => {
+const Product = () => {
     return(
         <div className={'cart-product'}>
             {/*<input type={'checkbox'} className={'bd'}/>*/}
@@ -34,4 +34,4 @@ const CartProduct = () => {
     )
 }
 
-export default CartProduct;
+export default Product;

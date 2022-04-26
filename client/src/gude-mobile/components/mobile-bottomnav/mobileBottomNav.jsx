@@ -48,6 +48,7 @@ const MobileBottomNav = ({history}) => {
                      setAdd(true)
                      setOrder(false)
                      setProfile(false)
+                     history.push('/add')
                  }}
             >
                 <i className={'fa fa-plus-circle'}> </i>
@@ -60,11 +61,12 @@ const MobileBottomNav = ({history}) => {
                      setAdd(false)
                      setOrder(true)
                      setProfile(false)
+                     history.push('/messages')
 
                  }}
             >
-                <img src={ordersIcon} alt={''}/>
-                <p>Orders</p>
+                <i className={'fab fa-facebook-messenger'}></i>
+                <p>Chats</p>
             </div>
             <div className={`profile ${profile ? 'link-active' : ''}`}
                  onClick={() => {

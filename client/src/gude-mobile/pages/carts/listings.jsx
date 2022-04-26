@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 
-import './carts.scss';
-import CartProduct from "../../components/cart-products/cartProduct";
+import './listings.scss';
 import {withRouter} from "react-router-dom";
+import CartListing from "../../components/cart-lisitng/cartListing";
+import WishListing from "../../components/wish-listing/wishListing";
 
-const Carts = ({history}) => {
+const Listings = ({history}) => {
 
     const [cartLink,setCartLink] = useState(true)
     const [wishLink,setWishLink] = useState(false)
@@ -25,20 +26,13 @@ const Carts = ({history}) => {
                     }}>Wishlist</span>
                 </div>
             </div>
-            <CartProduct />
-            <CartProduct />
-            <span className={'add-another bd'} onClick={() => history.push(('/home'))}>+ Add another item</span>
-            <div className={'sub-tottal'}>
-                <span>Sub Total</span><span>R10000</span>
-                <span>Delivery Fee</span><span>R10</span>
-            </div>
 
-            <div className={'total'}>
-                <span>Total</span><span>R70000</span>
-            </div>
+            {
+                cartLink ? <CartListing /> : <WishListing />
+            }
 
         </div>
     )
 }
 
-export default withRouter(Carts);
+export default withRouter(Listings);

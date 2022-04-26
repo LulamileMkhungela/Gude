@@ -7,6 +7,9 @@ import HomeProduct from "../../components/mobile-product/homeProduct";
 import {withRouter} from "react-router-dom";
 
 const MobileExplore = ({history}) => {
+
+    
+
     return (
         <div className={'mobile-explore'}>
             <MobileProductPromo/>

@@ -5,17 +5,13 @@ const cartSchema = new mongoose.Schema({
         _id: mongoose.Schema.Types.ObjectId,
         category: {
             type: String,
+            required: true,
         },
-        product_img_url: {
+        other: {
             type: String,
         },
-        isbn: {
-            type: Number,
-            default: null
-        },
-        imei: {
-            type: Number,
-            default: null
+        product_img_url: {
+            type: Array,
         },
         title: {
             type: String,
@@ -37,10 +33,6 @@ const cartSchema = new mongoose.Schema({
             type: Number,
             required: true,
         },
-        location: {
-            type: String,
-            required: true
-        },
         payment_method: {
             type: String,
             required: true
@@ -48,6 +40,10 @@ const cartSchema = new mongoose.Schema({
         _user_id: {
             type: String,
             required: true
+        },
+        _product_id : {
+            type : String,
+            required : true
         }
     },
     {

@@ -37,7 +37,7 @@ export const addToCartXhr = (productInfo,userId) => {
         const {_id,category,product_img_url,isbn,imei,title,desc,condition,price,quantity,location,payment_method} = productInfo
         try{
             post('http://localhost:8080/add/cart',{
-                _id,
+                _product_id : _id,
                 category,
                 product_img_url,
                 isbn,

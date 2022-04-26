@@ -30,9 +30,8 @@ import Promotion from "./pages/promotion/Promotion";
 import WishList from "./pages/wish-list/WishList";
 
 import Message from "./gude-mobile/pages/message/message";
-import Carts from "./gude-mobile/pages/carts/carts";
-
-// import Notification from "./pages/notification/Notification";
+import Carts from "./gude-mobile/pages/carts/listings";
+import AddProductMobile from './gude-mobile/pages/add-product/addProduct';
 
 const App = () => {
     const dispatch = useDispatch()
@@ -74,9 +73,10 @@ const App = () => {
                     }
                 </Route>
                 <Route path={'/add'}>
-                    <Root>
-                        <AddProduct/>
-                    </Root>
+
+                    {
+                        window.screen.width <= 768 ? <AddProductMobile /> : <Root><AddProduct/></Root>
+                    }
                 </Route>/messages
                 <Route path={'/cart'}>
 

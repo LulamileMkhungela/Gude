@@ -6,6 +6,9 @@
   right: 2px;
   z-index: 1081;
   background-color: #F6F8FD;
+  @media screen and (max-width: 768px){
+    display: none;
+  }
 }
 .top-nav{
   position: fixed;

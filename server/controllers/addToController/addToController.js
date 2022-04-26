@@ -1,10 +1,10 @@
 
 const Cart = require('../../models/Cart')
+const mongoose = require("mongoose");
 
 module.exports = {
     addToCartController: (req, res) => {
         const {
-            _id,
             category,
             product_img_url,
             title,
@@ -14,10 +14,11 @@ module.exports = {
             quantity,
             location,
             payment_method,
-            _user_id
+            _user_id,
+            _product_id
         } = req.body
 
-        Cart.findById(_id, (e, adv) => {
+        Cart.findOne({_product_id : _product_id, _user_id : _user_id}, (e, adv) => {
             if (e) {
                 return res.status(200).json({
                     err: true,
@@ -31,7 +32,7 @@ module.exports = {
                     })
                 } else {
                     const cart = new Cart({
-                        _id,
+                        _id : mongoose.Types.ObjectId(),
                         category,
                         product_img_url,
                         imei: req.body.imei ? req.body.imei : null,
@@ -44,6 +45,7 @@ module.exports = {
                         location,
                         payment_method,
                         _user_id,
+                        _product_id,
                     })
 
                     cart.save((e, result) => {
