@@ -6,6 +6,10 @@ import { MdSettings } from "react-icons/md";
 import './Profile.css'
 import img from '../../../images/default_img.png'
 
+//  Mobile modal screen
+import MobileModal from '../../components/mobile-modal/MobileModal'
+
+// Profile screens
 import MobileListing from './section/Listing/MobileListing'
 import MobileDraft from './section/Draft/MobileDraft'
 import MobileAbout from './section/About/MobileAbout'
@@ -14,6 +18,9 @@ import Settings from './section/Settings/Settings'
 
 const Profiles = () => {
   const [toggle, setToggle] = useState(0)
+  const [modalShow, setModalShow] = useState(false)
+
+  const closeMobileModal = () => setModalShow(false)
 
   return (
     <div>
@@ -29,9 +36,11 @@ const Profiles = () => {
             <p>Thabiso</p>
           </div>
           <div className="profies-btn-container">
-            <button>Edit</button>
+            <button onClick={() => setModalShow(true)}>Edit</button>
           </div>
         </div>
+        {modalShow ? <div onClick={closeMobileModal} className="profiles-back-drop"></div>: null}
+        <MobileModal modalShow={modalShow} closeMobileModal={closeMobileModal}/>
       </div>
       <div className="profile-inline-btn">
         <div className="profile-line">
