@@ -3,7 +3,6 @@
     border-radius: 0px 0px 20px 20px;
     width: 100%;
     height: 180px;
-    position: fixed;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -61,12 +60,13 @@
 
 .profile-line {
     display: flex;
-    margin-top: 190px;
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .profile-spacing-active {
+    /*margin-top: -180px;*/
     border-bottom: 3px solid red;
     cursor: pointer;
     font-weight: 600;
@@ -82,5 +82,18 @@
 
 .profilse-line {
     border-bottom: 1px solid grey;
+    display: flex;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profiles-back-drop {
+    background: rgba(0, 0, 0, 0.2);
+    margin-top: -150px;
+    height: 100%;
+    position: fixed;
+    transition: all 1.3s;
     width: 100%;
+    margin-bottom: 10px;
 }
