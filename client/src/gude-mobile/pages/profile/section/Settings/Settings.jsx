@@ -10,15 +10,13 @@ import Switch from '../../../../components/Switch/Switch'
 
 const Settings = () => {
     const [isToggled, setIsToggled] = useState(false)
-    
+
   return (
     <div className="settings-container">
         <div className="settings-pri-container">
-            <div>
-                <Link className="icon-naming" to="#">
-                    <BsFillBagCheckFill size={25} />
-                    <p>My orders</p>
-                </Link>
+            <div className="icon-naming">
+                <BsFillBagCheckFill size={25} />
+                <p>My orders</p>
             </div>
             <div>
                 <Link className="arrow-icon" to="#">
@@ -27,11 +25,9 @@ const Settings = () => {
             </div>
         </div>
         <div className="settings-pri-container">
-            <div>
-                <Link className="icon-naming" to="#">
-                    <BsCreditCard2BackFill size={25} />
-                    <p>My cards & wallets</p>
-                </Link>
+            <div className="icon-naming">
+                <BsCreditCard2BackFill size={25} />
+                <p>My cards & wallets</p>
             </div>
             <div>
                 <Link className="arrow-icon" to="#">
@@ -40,11 +36,9 @@ const Settings = () => {
             </div>
         </div>
         <div className="settings-pri-container">
-            <div>
-                <Link className="icon-naming" to="#">
-                    <MdLocationPin size={25} />
-                    <p>Address</p>
-                </Link>
+            <div className="icon-naming">
+                <MdLocationPin size={25} />
+                <p>Address</p>
             </div>
             <div>
                 <Link className="arrow-icon" to="#">
@@ -53,22 +47,18 @@ const Settings = () => {
             </div>
         </div>
         <div className="settings-pri-container">
-            <div>
-                <Link className="icon-naming" to="#">
-                    <MdNotifications size={25} />
-                    <p>Notification</p>
-                </Link>
+            <div className="icon-naming">
+                <MdNotifications size={25} />
+                <p>Notification</p>
             </div>
             <div>
                 <Switch isToggled={isToggled} onToggle={() => setIsToggled(!isToggled)} />
             </div>
         </div>
         <div className="settings-pri-container">
-            <div>
-                <Link className="icon-naming" to="#">
-                    <FaHeart size={25} />
-                    <p>WishLish</p>
-                </Link>
+            <div className="icon-naming">
+                <FaHeart size={25} />
+                <p>WishLish</p>
             </div>
             <div>
                 <Link className="arrow-icon" to="#">
@@ -77,11 +67,9 @@ const Settings = () => {
             </div>
         </div>
         <div className="settings-pri-container">
-            <div>
-                <Link className="icon-naming" to="#">
-                    <BsPersonCircle size={25} />
-                    <p>Market Profile</p>
-                </Link>
+            <div className="icon-naming">
+                <BsPersonCircle size={25} />
+                <p>Market Profile</p>
             </div>
             <div>
                 <Link className="arrow-icon" to="#">
@@ -90,16 +78,14 @@ const Settings = () => {
             </div>
         </div>
         <div className="settings-pri-container">
-            <div>
-                <Link className="icon-naming" to="#">
-                    <MdLogout size={25} />
-                    <p>Logout</p>
-                </Link>
+            <div className="icon-naming">
+                <MdLogout size={25} />
+                <p>Logout</p>
             </div>
             <div>
-                <Link className="arrow-icon" to="#">
+                <button className="setting-logout-btn">
                     <BiChevronRight size={30}  />
-                </Link>
+                </button>
             </div>
         </div>
     </div>
