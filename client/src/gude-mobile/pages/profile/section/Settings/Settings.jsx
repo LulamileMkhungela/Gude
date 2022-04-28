@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BsFillBagCheckFill, BsCreditCard2BackFill, BsPersonCircle } from "react-icons/bs";
 import { BiChevronRight } from "react-icons/bi";
@@ -6,9 +6,10 @@ import { MdLocationPin, MdNotifications, MdLogout } from "react-icons/md";
 import { FaHeart } from "react-icons/fa";
 
 import './Settings.css'
+import Switch from '../../../../components/Switch/Switch'
 
 const Settings = () => {
-    
+    const [isToggled, setIsToggled] = useState(false)
   return (
     <div className="settings-container">
         <div className="settings-pri-container">
@@ -58,9 +59,7 @@ const Settings = () => {
                 </Link>
             </div>
             <div>
-                <Link className="arrow-icon" to="#">
-                    <BiChevronRight size={30}  />
-                </Link>
+                <Switch isToggled={isToggled} onToggle={() => setIsToggled(!isToggled)} />
             </div>
         </div>
         <div className="settings-pri-container">
