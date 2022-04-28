@@ -10,6 +10,7 @@ import Switch from '../../../../components/Switch/Switch'
 
 const Settings = () => {
     const [isToggled, setIsToggled] = useState(false)
+    
   return (
     <div className="settings-container">
         <div className="settings-pri-container">
