@@ -1,0 +1,31 @@
+.mobile-about-container {
+    margin: 20px;
+    width: 89%;
+    height: 350px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+
+.mobile-about-intro h1 {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.mobile-about-due {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.mobile-icon-design .mobile-icon {
+    font-size: 20px;
+    color: black;
+}
+
+.mobile-paragraph-design p {
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
