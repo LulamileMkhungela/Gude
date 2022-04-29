@@ -5,6 +5,8 @@ const fileUpload = require('express-fileupload')
 const cookieParser = require('cookie-parser')
 const DB_connection = require('./config/db')
 
+const rooms = ['electronics', 'stationery', 'freebies', 'gaming', 'appliances' ]
+
 //Import Middleware Routes
 const authRoute = require('./routes/auth/authRoute')
 const sellProductRoute = require('./routes/sell-product/sellProductRoute')
@@ -46,4 +48,15 @@ app.get('/',(req,res) => {
     })
 })
 
-module.exports = app
+const server = require('http').createServer(app);
+const port = process.env.PORT || 8080;
+const io = require('socket.io')(server, {
+    cors: {
+        origin: 'http://localhost:3000',
+        methods: ['GET', 'POST']
+    }
+});
+
+server.listen(port, () => {
+    console.log(`server is up and running on port: ${port}`)
+})
