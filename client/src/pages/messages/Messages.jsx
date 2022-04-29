@@ -6,6 +6,7 @@ import MessageSliderData from '../../components/message-slider/MessageSliderData
 import MessageData from '../../components/message-information/MessageData'
 import MessageSearch from '../../components/message-search/MessageSearch'
 import Messager from '../../components/messager/Messager'
+import RightSIdeBar from '../../components/right-side-bar/RightSIdeBar'
 
 function Messages() {
   return (
@@ -19,7 +20,7 @@ function Messages() {
         </div>
       </div>
       <div className="messages-msg-container">
-        <Messager />
+        <RightSIdeBar />
       </div>
     </div>
   )
