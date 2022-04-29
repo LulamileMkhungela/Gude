@@ -24,6 +24,7 @@ import {getItemCount} from "./states/add-to-cart/addToCartAction";
 import Home from "./gude-mobile/pages/home/home";
 import Profile from './pages/profile/Profile';
 import MobileExplore from "./gude-mobile/pages/mobile-explore/mobileExplore";
+import MobileProductPromo from "./gude-mobile/components/mobile-product/mobileProductPromo";
 import MobileDetailProduct from "./gude-mobile/pages/mobile-detail-product/MobileDetailProduct";
 import Messages from "./pages/messages/Messages";
 import Promotion from "./pages/promotion/Promotion";
@@ -86,9 +87,9 @@ const App = () => {
                     }
                 </Route>
                 <Route path={'/messages'}>
-                    {
-                        window.screen.width <= 768 ? <Home><Message /></Home> : <Root><Messages /></Root>
-                    }
+                    <Root>
+                        <Messages/>
+                    </Root>
                 </Route>
                 <Route path={'/wish-list'}>
                     <Root>
@@ -101,11 +102,13 @@ const App = () => {
                     </Root>
                 </Route> */}
 
+
                 {/*<Route path={'/notification'}>*/}
                 {/*    <Root>*/}
                 {/*        <Notification/>*/}
                 {/*    </Root>*/}
                 {/*</Route>*/}
+
                 <Route path={'/promotion'}>
                     <Root>
                         <Promotion/>
