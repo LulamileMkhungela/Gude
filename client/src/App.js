@@ -29,6 +29,11 @@ import MobileDetailProduct from "./gude-mobile/pages/mobile-detail-product/Mobil
 import Messages from "./pages/messages/Messages";
 import Promotion from "./pages/promotion/Promotion";
 import WishList from "./pages/wish-list/WishList";
+
+import Message from "./gude-mobile/pages/message/message";
+import Carts from "./gude-mobile/pages/carts/carts";
+import Profiles from "./gude-mobile/pages/profile/Profiles";
+
 // import Notification from "./pages/notification/Notification";
 
 const App = () => {
@@ -76,9 +81,10 @@ const App = () => {
                     </Root>
                 </Route>/messages
                 <Route path={'/cart'}>
-                    <Root>
-                        <CartListing/>
-                    </Root>
+
+                    {
+                        window.screen.width <= 768 ? <Home><Carts /></Home> : <Root><CartListing /></Root>
+                    }
                 </Route>
                 <Route path={'/messages'}>
                     <Root>
@@ -95,6 +101,14 @@ const App = () => {
                         <Notification/>
                     </Root>
                 </Route> */}
+
+
+                {/*<Route path={'/notification'}>*/}
+                {/*    <Root>*/}
+                {/*        <Notification/>*/}
+                {/*    </Root>*/}
+                {/*</Route>*/}
+
                 <Route path={'/promotion'}>
                     <Root>
                         <Promotion/>
@@ -111,9 +125,9 @@ const App = () => {
                     </Root>
                 </Route>
                 <Route path={'/profile'}>
-                    <Root>
-                        <Profile/>
-                    </Root>
+                    {
+                        window.screen.width <= 768 ? <Home><Profiles /></Home> : <Root><Profile/></Root>
+                    }
                 </Route>
             </Switch>
         </BrowserRouter>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { MdArrowBack } from "react-icons/md"
 import { FaPen } from "react-icons/fa"
+import { useSelector } from 'react-redux'
 
 import './Profile.css'
 import studentCover from '../../images/student_cover.png'
@@ -13,7 +12,6 @@ import Listing from './listing/Listing'
 import About from './about/About'
 import Draft from './draft/Draft'
 import Sold from './sold/Sold'
-import {useSelector} from "react-redux";
 
 const Profile = () => {
     const [togglestate, SetTogglestate] = useState(1);
@@ -25,6 +23,7 @@ const Profile = () => {
     const [soldItems,setSoldItems] = useState(false)
 
     const accType = useSelector(state => state.userLoggedInData.userInfo.acc_type);
+    const userInfo = useSelector(state => state.userLoggedInData.userInfo)
 
     const closeModalHandler = () => setShow(false);
 
@@ -40,18 +39,13 @@ const Profile = () => {
   return (
     <div className="profile-container">
         <div className="profile-mother-container">
-            <div className="profile-arrow">
-                <Link to="/home">
-                    <MdArrowBack size={30} color={'black'} />
-                </Link>
-            </div>
             <div className="profile-picture-cointainer">
                 {/* fetch the cover image from the database*/}
                 <img className="profile-cover-image" src={studentCover} alt="" />
                 {/* fetch the profile pic from  the database and*/}
                 <img className="profile-picture" src={profilePic} alt="" />
                 {/** fetch the name from the database */}
-                <p className="profile-name">Thabiso Hlatshayo</p>
+                <p className="profile-name">{ userInfo.firstname + ' ' + userInfo.lastname }</p>
                 {show ? <div onClick={closeModalHandler} className="profile-modal-drop"></div> : null}
                 <button onClick={showModalHandler} className="profile-modal">
                     <FaPen size={30} />
@@ -62,28 +56,35 @@ const Profile = () => {
             <div className="profile-info">
                 <div>
                 
-                    <div
-                        className={togglestate === 1 ? "tab-active" : "tabs"}
-                        onClick={() => {
-                            setAbout(false)
-                            setListing(true)
-                            setDraft(false)
-                            setSoldItems(false)
-                            toggleTab(1)
-                        }}>
-                        Your listings
-                    </div>
-                <div
-                        className={togglestate === 2 ? "tab-active" : "tabs"}
-                        onClick={() => {
-                            setAbout(false)
-                            setListing(false)
-                            setDraft(true)
-                            setSoldItems(false)
-                            toggleTab(2)
-                        }}>
-                        Drafts
-                    </div>
+                    {
+                        accType==='student' && <> 
+
+
+                                                <div
+                                                    className={togglestate === 1 ? "tab-active" : "tabs"}
+                                                    onClick={() => {
+                                                        setAbout(false)
+                                                        setListing(true)
+                                                        setDraft(false)
+                                                        setSoldItems(false)
+                                                        toggleTab(1)
+                                                    }}>
+                                                    Your listings
+                                                </div>
+                                                <div
+                                                    className={togglestate === 2 ? "tab-active" : "tabs"}
+                                                    onClick={() => {
+                                                        setAbout(false)
+                                                        setListing(false)
+                                                        setDraft(true)
+                                                        setSoldItems(false)
+                                                        toggleTab(2)
+                                                    }}>
+                                                    Drafts
+                                                </div>
+
+                                            </>
+                    }
                     <div className={togglestate === 3 ? "tab-active" : "tabs"}
                         onClick={() => {
                             setAbout(true)
@@ -94,16 +95,18 @@ const Profile = () => {
                         }}>
                         About
                     </div>
-                    <div className={togglestate === 4 ? "tab-active" : "tabs"}
-                        onClick={() => {
-                            setAbout(false)
-                            setListing(false)
-                            setDraft(false)
-                            setSoldItems(true)
-                            toggleTab(4)
-                        }}>
-                        Sold items
-                    </div>
+                    {
+                        accType==='student' && <div className={togglestate === 4 ? "tab-active" : "tabs"}
+                                                    onClick={() => {
+                                                    setAbout(false)
+                                                    setListing(false)
+                                                    setDraft(false)
+                                                    setSoldItems(true)
+                                                    toggleTab(4)
+                                                    }}>
+                                                    Sold items
+                                                </div>
+                    }
                 </div>
                 <div>
 

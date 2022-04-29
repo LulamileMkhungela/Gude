@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import axios from 'axios'
 
 import './Cart_Modal.css'
 import Delivery from './section/delivery/Delivery'
@@ -6,6 +8,7 @@ import Address from './section/address/Address'
 import Payment from './section/payment/Payment'
 
 function Cart_Modal({  showModal, closeX}) {
+  const dispatch = useDispatch()
   const [page, setPage] = useState('delivery')
   const [deliver, setDeliver] = useState("one")
   const [buyerInfor, setBuyInfo] = useState({
@@ -20,6 +23,15 @@ function Cart_Modal({  showModal, closeX}) {
   const OnChangeValueHandler = (event) => {
     setPage(event.target.value)
     console.log(event.target.value)
+  }
+
+  const handleSubmit = async () => {
+      const postData = {
+        buyerInfor,
+        deliver
+      }
+
+      await axios.post('http://localhost:8080/api/payment/', postData)
   }
 
   return (
@@ -71,7 +83,9 @@ function Cart_Modal({  showModal, closeX}) {
         </div>
       </div>
     </div>
-    <div className="cart-button-space"></div>
+    <div className="cart-button-space">
+      <button onClick={handleSubmit}>send</button>
+    </div>
     </>
   )
 }

@@ -1,50 +1,40 @@
 .profile-container {
     padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.profile-container .profile-mother-container {
-    flex-direction: row;
-    display: inline-block;
-} 
-
-.profile-container .profile-picture-cointainer {
+.profile-picture-cointainer {
     height: 450px;
 }
 
-.profile-container .profile-picture-cointainer .profile-cover-image {
-    margin-top: -20px;
-    margin-left: 70px;
-    margin-right: 10px auto;
-    border-radius: 10px;
-    max-width: 100%;
-    width: 1250px;
-    height: 320px;
-}
-
-.profile-container .profile-picture-cointainer .profile-picture {
-    position: absolute;
-    left: 55%;
-    top: 55%;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
+.profile-cover-image {
+    margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 10px;
+    width: 100%;
+    height: 420px;
 }
 
-.profile-container .profile-picture-cointainer .profile-name {
+.profile-picture {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.profile-name {
     font-size: 30px;
     font-weight: bolder;
-    text-align: center;
     margin-top: 80px;
+    text-align: center;
 
 }
 
 .profile-container hr {
+    margin-top: 130px;
     height: 1px;
-    margin-left: 100px;
-    width: 90%;
+    width: 100%;
     background-color: #ccc;
     border: none;
 }
@@ -111,35 +101,4 @@
     margin-left: -50px;
     bottom: -100px;
     width: 100%;
-}
-
-@media screen and (max-width: 800px) {
-    .profile-container {
-        margin: 5px;
-    }
-
-    .profile-container .profile-picture-cointainer .profile-cover-image {
-        display: none;
-    }
-
-    .profile-container .profile-picture-cointainer .profile-picture {
-        display: none;
-    }
-
-    .profile-container .profile-picture-cointainer .profile-name {
-        display: none;
-    }
-
-    .profile-container hr {
-        display: none;
-    }
-
-    .profile-container .profile-mother-container .profile-arrow {
-        display: none;
-    }
-
-    .profile-container .profile-info {
-        margin-left: -80px;
-        font-size: 16px;
-    }
 }

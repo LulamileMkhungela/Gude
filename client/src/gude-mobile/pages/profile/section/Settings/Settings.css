@@ -1,0 +1,33 @@
+.settings-container {
+    margin: 30px;
+}
+
+.settings-pri-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.icon-naming {
+    display: flex;
+    color: black;
+}
+
+.icon-naming p {
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.arrow-icon {
+    color: black;
+}
+
+.setting-logout-btn {
+    border: none;
+    outline: none;
+    background: white;
+    color: black;
+    width: 40px;
+    height:30px;
+}

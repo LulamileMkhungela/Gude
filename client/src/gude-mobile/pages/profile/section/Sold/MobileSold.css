@@ -1,0 +1,20 @@
+.mobile-sold-container {
+    margin: 20px;
+    width: 89%;
+    height: 350px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+
+.mobile-sold-header h1 {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.mobile-sold-items p {
+    margin: 30px;
+    font-size: 16px;
+    font-weight: 400;
+}

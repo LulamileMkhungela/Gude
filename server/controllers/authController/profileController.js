@@ -13,13 +13,25 @@ const profileController = {
                //Fetch From Table Students
             const student = await  Student.find({_student_id: req.user.id}).select('-password')
             const user = await User.findById(req.user.id, 'firstname lastname')
+
+        try {
+
+            //Fetch From Table Students
+            const student = await Student.findOne({_student_id: req.user.id}).select('-password')
+
             // console.log(user)
             const userInfo = {student_info : student,user_info : user}
             res.json(userInfo)
+
             } catch (err) {
                 return res.status(500).json({msg: err.message})
             }
             
+
+        } catch (err) {
+            return res.status(200).json({msg: err.message})
+        }
+
 
         }else{
             //Fetch From Table Users

@@ -57,7 +57,7 @@ const DetailProduct = ({history}) => {
                 <div className={'product-details'}>
                     <div className={'product-details-img bd'}>
                         {
-                            fetched ? <img className={'bd'} src={product.product_info.product_img_url} alt={''}/> : ''
+                            fetched ? <img className={'bd'} src={product.product_info.product_img_url[0]} alt={''}/> : ''
                         }
                     </div>
                     <div className={'product-info'}>

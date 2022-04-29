@@ -13,10 +13,7 @@ const wishlistRoute = require('./routes/add-to-wishlist/wishList')
 const conversationRoute = require('./routes/chats/conversations')
 const messageRoute = require('./routes/chats/messages')
 const userRoute = require('./routes/users/users')
-
-//const paymentRoute = require('./routes/payment-modal/paymentModal')
-// const paymentRoute = require('./routes/payment-modal/paymentModal')
-
+const paymentRoute = require('./routes/payment/payment')
 
 const app = express();
 require('dotenv').config()
@@ -41,7 +38,7 @@ app.use('/api/wishlist', wishlistRoute)
 app.use('/api/users', userRoute)
 app.use('/api/conversations', conversationRoute)
 app.use('/api/messages', messageRoute)
-//app.use('/api/modal', paymentRoute)
+app.use('/api/payment', paymentRoute)
 
 app.get('/',(req,res) => {
     return res.status(200).json({
