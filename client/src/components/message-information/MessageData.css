@@ -1,0 +1,92 @@
+.msg-container {
+    margin: 0;
+}
+
+.msg-header-icon {
+    display: flex;
+    justify-content: space-between;
+    gap: 140px;
+}
+
+.msg-header-icon .msg-header {
+    font-size: 25px;
+    font-weight: 800;
+}
+.msg-header-icon .msg-icon {
+    font-size: 32px;
+}
+
+.msg-avail {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    color: grey;
+}
+
+.msg-sku-price-element {
+    display: flex;
+    justify-content: space-between;
+    gap: 130px;
+}
+
+.msg-sku-price-element .msg-sku {
+    float: left;
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    color: grey;
+}
+
+.msg-sku-price-element .msg-price {
+    float: right;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.msg-views-listed {
+    display: flex;
+    justify-content: space-between;
+}
+
+.msg-views-listed .msg-views {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.msg-views-listed .msg-listed {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.msg-line hr {
+    border-top: 1px dashed black;
+}
+
+.msg-btn-row {
+    display: flex;
+    margin-top: 10px;
+}
+
+.msg-btn-row .msg-btn-primary {
+    width: 130px;
+    height: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    outline: none;
+    border: none;
+}
+
+.msg-btn-row .msg-btn-primary:hover {
+    background-color: rgb(143, 143, 143)   
+}
+
+.msg-btn-row .msg-btn-options {
+    width: 70px;
+    height: 50px;
+    outline: none;
+    border: none;
+}
+
+.msg-btn-row .msg-btn-options:hover {
+    background-color: rgb(143, 143, 143)
+}

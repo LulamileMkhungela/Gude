@@ -1,0 +1,127 @@
+.listing-container {
+    margin-top: 30px;
+    align-items: center;
+    width: 90%;
+    height: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+
+.listing-top-container {
+    height: 60px;
+    width: 100%;
+    background-color: rgb(184, 184, 184);
+    border-radius: 5px 5px 0px 0px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.listing-h5-text {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.listing-see-link {
+    margin-top: 10px;
+    margin-right: 20px;
+    width: 100px;
+    height: 30px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.listing-see-link:hover {
+    background-color: white;
+}
+
+.listing-holder-container {
+    display: flex;
+    width: 100%;
+}
+
+.listing-1st-child {
+    width: 45%;
+    float: left;
+    margin: 5px;
+}
+
+.listing-2nd-child {
+    width: 55%;
+    float: right;
+    margin-top: 0px;
+    margin-left: 100px;
+}
+
+.listing-image {
+    width: 100%;
+    height: 400px
+}
+
+.listing-h5 {
+    text-align: center;
+    margin: 20px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.listing-status {
+    font-weight: 400;
+    font-size: 16px;
+    color: grey;
+    margin-left: 20px;
+}
+
+.listing-status span {
+    margin-left: 5px;
+}
+
+.listing-sku {
+    font-weight: 400;
+    font-size: 16px;
+    color: grey;
+    margin-left: 20px;
+}
+
+.listing-location {
+    font-weight: 400;
+    font-size: 16px;
+    color: grey;
+    margin-left: 20px
+}
+
+.listinig-profile {
+    flex-direction: row;
+    display: inline-block;
+}
+
+.listing-profile-image {
+    margin-left: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.listing-fornames {
+    margin-top: -35px;
+    margin-left: 80px;
+    font-weight: 400;
+}
+
+.listing-2nd-child hr { 
+    border: 1px dashed #000; 
+    width: 90%; 
+    margin-left: 20px;
+    margin-top: 15px; 
+}
+
+.listing-description {
+    margin-left: 20px;
+}
+
+.listing-information {
+    margin-left: 20px;
+}

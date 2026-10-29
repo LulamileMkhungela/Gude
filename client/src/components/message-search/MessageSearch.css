@@ -1,0 +1,27 @@
+.msg-search-container {
+    margin: 0;
+    width: auto;
+}
+
+.msg-search-2nd-container {
+    background: white;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 100% auto;
+    height: 50px;
+    display: flex;
+}
+
+.msg-search-2nd-container .msg-search-icon {
+    margin: 5px;
+}
+
+.msg-search-2nd-container input {
+    width: 100%;
+    margin-left: 7px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: 600;
+}

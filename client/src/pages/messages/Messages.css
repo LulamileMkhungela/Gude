@@ -1,0 +1,25 @@
+.messages-container {
+    margin: 0px;
+}
+
+.messages-product-container {
+    display: flex;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
+    width: 80% auto;
+    height: 450px;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 3px;
+}
+
+.messages-product-container .messages-data-container {
+    padding: 20px;
+    margin-left: 1%;
+}
+
+.messages-container .messages-msg-container {
+    margin-top: 30px;
+}

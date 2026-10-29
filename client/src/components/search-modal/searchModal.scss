@@ -1,0 +1,22 @@
+.search-modal{
+  position: fixed;
+  left: 115px;
+  width: 531px;
+  top: 60px;
+  border-radius: 7px;
+  background-color: #FFFFFF;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  .search-item{
+    height: 80px;
+    width: 100%;
+    border-bottom: 0.05em solid rgba(211,211,211,.5);
+    border-top: 0.05em solid rgba(211,211,211,.5);
+    .row{
+      margin-top: 10px;
+      .col-lg-2{
+        height: 60px;
+      }
+    }
+  }
+}

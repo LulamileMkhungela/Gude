@@ -1,0 +1,65 @@
+.about-container {
+    margin-top: 30px;
+    padding: 40px 30px;
+    max-width: 100%;
+    width: 100%;
+    height: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-container form {
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    z-index: 100;
+}
+
+.about-container .about-form-content {
+    display: flex;
+}
+
+.about-form-content .about-form {
+    width: calc(400% / 2 -px 25);
+    z-index: 0;
+}
+
+.about-form-content .about-title {
+    position: relative;
+    font-size: 24px;
+    font-weight: 80
+}
+
+.about-form-content .about-input-boxes {
+    margin-top: 30px;
+} 
+
+.about-form-content .profile-input-box {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 600%;
+    margin: 10px 0;
+    position: relative;
+}
+
+.about-form-content .profile-input-box p {
+    height: 100%;
+    width: 100%;
+    margin-top: 15px;
+    margin-left: 8px;
+    outline: none;
+    border: none;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.about-form-content .profile-input-box .about-icon {
+    position: absolute;
+    color: black;
+}
